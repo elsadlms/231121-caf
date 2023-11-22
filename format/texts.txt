@@ -1,0 +1,223 @@
+# texts
+
+## intro
+
+_text-1: 
+<p>INTRO 1</p>
+
+_text-2: 
+<p>INTRO 2</p>
+
+_text-3:
+<p>INTRO 3</p>
+
+
+## part-1
+
+_text-1: 
+<p>PART 1 TEXT 1</p>
+
+_text-2: 
+<p>PART 1 TEXT 2</p>
+
+_text-3:
+<p>PART 1 TEXT 3</p>
+
+
+## part-2
+
+_text-1: 
+<p>PART 2 TEXT 1</p>
+
+_text-2: 
+<p>PART 2 TEXT 2</p>
+
+_text-3:
+<p>PART 2 TEXT 3</p>
+
+
+## part-3
+
+_text-1: 
+<p>PART 3 TEXT 1</p>
+
+_text-2: 
+<p>PART 3 TEXT 2</p>
+
+_text-3:
+<p>PART 3 TEXT 3</p>
+
+
+## plan
+
+_text-1:
+<p>
+Savez-vous que la CAF procède à des contrôles de ces allocataires ? 1 % des gens sont visités par des contrôleurs chaque année.
+</p>
+
+_text-2:
+<p>
+Les contrôleurs épuchent leurs factures, leurs relevés bancaires, vérifient les informations et avec qui ils vivent. 5h de contrôle qu'on ne peut pas refuser.
+</p>
+
+_text-3:
+<p>
+Pour savoir qui contrôler, ils utilisent un algo pour noter les allocataires. Officiellement "neutre", il cible en fait souvent les plus fragiles, révèle notre super enquête.
+</p>
+
+_text-4:
+<p>
+La CNAF a publié en 2016 des données pour savoir quelles populations avaient été controlées en 2015.
+</p>
+
+_text-5:
+<p>
+Les familles monoparentales et les personnes à faibles revenus y sont surreprésentées.
+</p>
+
+_text-6:
+<p>
+Les montants rappelés sont énormes, surtout pour les contrôles sur place. La moitié des gens qui doivent rembourser leur indu devaient rembourser plus de 1150 euros. Pour certains, ce sont des dizaines de milliers d'euros
+</p>
+
+_text-7:
+<p>
+La CNAF n'a pas publié de telles données depuis, et a refusé de communiquer des données plus récentes au Monde.
+</p>
+
+_text-8:
+<p>
+La CAF, pionnière dans le domaine, utilise un algo d'IA pour noter ses allocataires.
+</p>
+
+_text-9:
+<p>
+Le Monde et Lighthouse Reports ont obtenu grâce à une demande de documents administratifs, les algorithmes utilisés de 2010 à 2014 puis de 2014 à 2018. Une version caviardée de l'algo actuel est aussi dispo.
+</p>
+
+_text-10:
+<p>
+Moment autocongratulation : Pour la première fois, on a analysé N lignes de code en SAS. 
+</p>
+
+_text-11:
+<p>
+C'est un vieil algo assez simple : il calcule pour chaque critère et chaque valeur, un poids. 
+</p>
+
+_text-12:
+<p>
+Déroulé de 5 critères choisis... 
+</p>
+
+_text-13:
+<p>
+...des caractéristiques du foyer (âge, situation maritale, âge des enfants...) 
+</p>
+
+_text-14:
+<p>
+...l'activité et les ressources de ses membres
+</p>
+
+_text-15:
+<p>
+...certains comportements de l'allocataire (connexions au site caf.fr, visites en agence; etc.)
+</p>
+
+_text-16:
+<p>
+Ces poids s'ajoutent simplement pour constituer votre score.
+</p>
+
+_text-17:
+<p>
+Les scores sont ensuite envoyés dans les CAF qui trient les dossiers et contrôlent les dossiers les mieux classés, c'est à dire considérés comme les plus "à risque".
+</p>
+
+_text-18:
+<p>
+L'algo est fait de telle façon qu'un critère néfaste est donc néfaste dans tous les cas, pas de circonstances atténuantes, pas de complexité.
+</p>
+
+_text-19:
+<p>
+Effets de seuil : on fait des paquets et on tombe du bon ou du mauvais côté.
+</p>
+
+_text-20:
+<p>
+Sur les N critères utilisées, M sont liées aux ressources de l'allocataire. Plus ses ressources sont faibles, plus son score est élevé.
+</p>
+
+_text-21:
+<p>
+Les handicapés et l'AAH.
+</p>
+
+_text-22:
+<p>
+Les parents isolés.
+</p>
+
+_text-23:
+<p>
+Il y a aussi d'éventuelles discriminations "indirectes".
+</p>
+
+_text-24:
+<p>
+La nationalité (warning : plus utilisé, mais utilisé un temps).
+</p>
+
+_text-25:
+<p>
+Tout ça pose des questions éthiques, d'équité entre citoyens, voire juridiques > citer Xenidis ?
+</p>
+
+_text-26:
+<p>
+D'ailleurs la CNAF reconnaît ne pas avoir anticipé tout ça et ne pas faire d'audit ni s'inquiéter de possibles discriminations.
+</p>
+
+_text-27:
+<p>
+Certaines populations ne seront jamais contrôlées (ex: les plus aisés).
+</p>
+
+_text-28:
+<p>
+La CAF justifie parce que certaines allocs sont + à erreurs que d'autres parce que plus compliquées
+</p>
+
+_text-29:
+<p>
+Mais cette politique n'est pas vraiment assumée et cachée derrière des corrélations statistiques.
+</p>
+
+_text-30:
+<p>
+"Ca arrange bien tout le monde de ne pas avoir ce débat, et de le mettre dans une boite noire mathématique"
+</p>
+
+
+## end
+
+_credits:
+<div class="caf-credits">
+<p>
+<strong>Conception, textes et visualisations&nbsp;:</strong> Raphaëlle&nbsp;Aubert, Elsa&nbsp;Delmas, Maxime&nbsp;Ferrer, Léa&nbsp;Sanchez et Maxime&nbsp;Vaudano
+</p>
+<p>
+<strong>Suivi éditorial&nbsp;:</strong> Grégoire&nbsp;Allix
+</p>
+<p>
+<strong>Edition&nbsp;:</strong> Claire&nbsp;Gillet
+</p>
+<p>
+<strong>Design&nbsp;:</strong> Thomas&nbsp;Steffen
+<p>
+<strong>Développement&nbsp;:</strong> Raphaëlle&nbsp;Aubert, Elsa&nbsp;Delmas et Léa&nbsp;Sanchez 
+</p>
+</div>
+

@@ -1,0 +1,817 @@
+// CONFIG
+
+# page_config
+## CONFIG
+
+_css:
+
+// SLOTS
+
+# PAGE_SLOTS
+
+## caf-scrllgngn
+
+_name: scrllgngn
+_selector: .caf-scrllgngn-root
+_options: caf-scrllgngn/options >>> toRef
+
+## caf-header
+
+_name: header
+_selector: .caf-header-root
+_options: caf-header/options >>> toRef
+
+// CHUNKS
+
+# CHUNKS
+
+## block-empty-scroll
+_content: 
+<div style="height: {{HEIGHT}};">
+</div>
+
+
+## block-intro-text
+_content: 
+<div class="caf-scrolling-text lm-flex-center">
+  <div class="caf-scrolling-text__text caf-scrolling-text__intro">
+    {{TEXT}}
+  </div>
+</div>
+
+## block-scrolling-text
+_content: 
+<div class="caf-scrolling-text lm-flex-center">
+  <div class="caf-scrolling-text__text">
+    {{TEXT}}
+  </div>
+</div>
+
+## block-simple-text
+_content: 
+<div class="caf-scrolling-text lm-flex-center">
+  <div class="caf-simple-text">
+    {{TEXT}}
+  </div>
+</div>
+
+// HEADER
+
+# caf-header
+## options
+
+// SCRLLGNGN
+
+# caf-scrllgngn
+## options
+_thresholdOffset: 50%
+_pages:
+
+// intro
+../../page-empty,
+../../page-title,
+../../page-intro-text-1,
+../../page-intro-text-2,
+../../page-intro-text-3,
+
+// déroulé
+../../page-1,
+../../page-2,
+../../page-3,
+../../page-4,
+../../page-5,
+../../page-6,
+../../page-7,
+../../page-8,
+../../page-9,
+../../page-10,
+../../page-11,
+../../page-12,
+../../page-13,
+../../page-14,
+../../page-15,
+../../page-16,
+../../page-17,
+../../page-18,
+../../page-19,
+../../page-20,
+../../page-21,
+../../page-22,
+../../page-23,
+../../page-24,
+../../page-25,
+../../page-26,
+../../page-27,
+../../page-28,
+../../page-29,
+../../page-30,
+
+// end
+../../page-credits,
+
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-empty
+_id: page-empty
+_blocks:
+  //../../module-intro,
+  ../../empty-scroll-100vh,
+  >>> split ,
+  >>> map trim
+  >>> map toRef
+
+// intro
+## page-title
+_id: page-title
+_blocks: 
+../../module-intro,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-intro-text-1
+_id: page-intro-text-1
+_blocks: 
+../../module-intro,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-intro-text-2
+_id: page-intro-text-2
+_blocks: 
+../../module-intro,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-intro-text-3
+_id: page-intro-text-3
+_blocks: 
+../../intro-text-3,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+// partie 1
+## part-1-page-1
+_id: part-1-page-1
+_blocks: 
+../../part-1-text-1,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## part-1-page-2
+_id: part-1-page-2
+_blocks: 
+../../part-1-text-2,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## part-1-page-3
+
+_id: part-1-page-3
+_blocks: 
+../../part-1-text-3,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+// plan
+## page-1
+_id: page-1
+_blocks: 
+../../block-text-1,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-2
+_id: page-2
+_blocks: 
+../../block-text-2,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-3
+_id: page-3
+_blocks: 
+../../block-text-3,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-4
+_id: page-4
+_blocks: 
+../../block-text-4,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-5
+_id: page-5
+_blocks: 
+../../block-text-5,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-6
+_id: page-6
+_blocks: 
+../../block-text-6,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-7
+_id: page-7
+_blocks: 
+../../block-text-7,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-8
+_id: page-8
+_blocks: 
+../../block-text-8,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-9
+_id: page-9
+_blocks: 
+../../block-text-9,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-10
+_id: page-10
+_blocks: 
+../../block-text-10,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-11
+_id: page-11
+_blocks: 
+../../block-text-11,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-12
+_id: page-12
+_blocks: 
+../../block-text-12,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-13
+_id: page-13
+_blocks: 
+../../block-text-13,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-14
+_id: page-14
+_blocks: 
+../../block-text-14,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-15
+_id: page-15
+_blocks: 
+../../block-text-15,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-16
+_id: page-16
+_blocks: 
+../../block-text-16,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-17
+_id: page-17
+_blocks: 
+../../block-text-17,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-18
+_id: page-18
+_blocks: 
+../../block-text-18,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-19
+_id: page-19
+_blocks: 
+../../block-text-19,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-20
+_id: page-20
+_blocks: 
+../../block-text-20,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-21
+_id: page-21
+_blocks: 
+../../block-text-21,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-22
+_id: page-22
+_blocks: 
+../../block-text-22,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-23
+_id: page-23
+_blocks: 
+../../block-text-23,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-24
+_id: page-24
+_blocks: 
+../../block-text-24,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-25
+_id: page-25
+_blocks: 
+../../block-text-25,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-26
+_id: page-26
+_blocks: 
+../../block-text-26,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-27
+_id: page-27
+_blocks: 
+../../block-text-27,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-28
+_id: page-28
+_blocks: 
+../../block-text-28,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-29
+_id: page-29
+_blocks: 
+../../block-text-29,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-30
+_id: page-30
+_blocks: 
+../../block-text-30,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+// MODULES
+
+## module-intro
+_id: module-intro
+_type: module
+_trackScroll: true
+_depth: back
+_zIndex: 1
+_transitions: fade, 600
+//_content: https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-modules/intro.js
+_content: http://localhost:5173/build/intro.js
+
+// BLOCS
+
+## empty-scroll-50vh
+_id: empty-scroll-50vh
+_type: html
+_content: CHUNKS/block-empty-scroll/content
+>>> toRef
+>>> toString
+>>> replace {{HEIGHT}} 50vh
+>>> toHtml
+
+## empty-scroll-100vh
+_id: empty-scroll-100vh
+_type: html
+_content: CHUNKS/block-empty-scroll/content
+>>> toRef
+>>> toString
+>>> replace {{HEIGHT}} 100vh
+>>> toHtml
+
+## intro-text-1
+_id: intro-text-1
+_type: html
+_content: CHUNKS/block-intro-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/intro/text-1
+>>> toHtml
+
+## intro-text-2
+_id: intro-text-2
+_type: html
+_content: CHUNKS/block-intro-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/intro/text-2
+>>> toHtml
+
+## intro-text-3
+_id: intro-text-3
+_type: html
+_content: CHUNKS/block-intro-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/intro/text-3
+>>> toHtml
+
+## part-1-text-1
+_id: part-1-text-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/part-1/text-1
+>>> toHtml
+
+## part-1-text-2
+_id: part-1-text-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/part-1/text-2
+>>> toHtml
+
+## part-1-text-3
+_id: part-1-text-3
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/part-1/text-3
+>>> toHtml
+
+## block-text-1
+_id: block-text-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-1
+>>> toHtml
+
+## block-text-2
+_id: block-text-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-2
+>>> toHtml
+
+## block-text-3
+_id: block-text-3
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-3
+>>> toHtml
+
+## block-text-4
+_id: block-text-4
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-4
+>>> toHtml
+
+## block-text-5
+_id: block-text-5
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-5
+>>> toHtml
+
+## block-text-6
+_id: block-text-6
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-6
+>>> toHtml
+
+## block-text-7
+_id: block-text-7
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-7
+>>> toHtml
+
+## block-text-8
+_id: block-text-8
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-8
+>>> toHtml
+
+## block-text-9
+_id: block-text-9
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-9
+>>> toHtml
+
+## block-text-10
+_id: block-text-10
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-10
+>>> toHtml
+
+## block-text-11
+_id: block-text-11
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-11
+>>> toHtml
+
+## block-text-12
+_id: block-text-12
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-12
+>>> toHtml
+
+## block-text-13
+_id: block-text-13
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-13
+>>> toHtml
+
+## block-text-14
+_id: block-text-14
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-14
+>>> toHtml
+
+## block-text-15
+_id: block-text-15
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-15
+>>> toHtml
+
+## block-text-16
+_id: block-text-16
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-16
+>>> toHtml
+
+## block-text-17
+_id: block-text-17
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-17
+>>> toHtml
+
+## block-text-18
+_id: block-text-18
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-18
+>>> toHtml
+
+## block-text-19
+_id: block-text-19
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-19
+>>> toHtml
+
+## block-text-20
+_id: block-text-20
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-20
+>>> toHtml
+
+## block-text-21
+_id: block-text-21
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-21
+>>> toHtml
+
+## block-text-22
+_id: block-text-22
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-22
+>>> toHtml
+
+## block-text-23
+_id: block-text-23
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-23
+>>> toHtml
+
+## block-text-24
+_id: block-text-24
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-24
+>>> toHtml
+
+## block-text-25
+_id: block-text-25
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-25
+>>> toHtml
+
+## block-text-26
+_id: block-text-26
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-26
+>>> toHtml
+
+## block-text-27
+_id: block-text-27
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-27
+>>> toHtml
+
+## block-text-28
+_id: block-text-28
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-28
+>>> toHtml
+
+## block-text-29
+_id: block-text-29
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-29
+>>> toHtml
+
+## block-text-30
+_id: block-text-30
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-30
+>>> toHtml
+

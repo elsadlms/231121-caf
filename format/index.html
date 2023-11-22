@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .lm-page-config,
+      .lm-app-config {
+        display: none;
+      }
+    </style>
+    <script
+      src="https://assets-decodeurs.lemonde.fr/design-edito/v0.1/shared/index.js"
+      type="module"
+    ></script>
+    <!-- <script src="/shared/index.js" type="module"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://assets-decodeurs.lemonde.fr/redacweb/editorial-design-sys/lmui-variables.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://assets-decodeurs.lemonde.fr/redacweb/editorial-design-sys/lmui-components.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div
+      style="display: none"
+      class="lm-page-config"
+      value="approxPublicationDate"
+    >
+      2023-12-04
+    </div>
+    <div style="display: none" class="lm-page-config" value="id">caf</div>
+    <div style="display: none" class="lm-page-config" value="textbaseUrl">
+      ./texts.txt
+    </div>
+    <div style="display: none" class="lm-page-config" value="textbaseUrl">
+      ./structure.txt
+    </div>
+
+    <div class="caf-header-root"></div>
+    <div
+      class="caf-scrllgngn-root"
+      style="min-height: 100vh; background-color: transparent"
+    ></div>
+  </body>
+</html>
