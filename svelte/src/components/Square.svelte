@@ -17,9 +17,13 @@
 </script>
 
 <div class="square" style={inlineStyle.join('')}>
-  <p>col {col}</p>
-  <p>row {row}</p> 
-  <p>score {score}</p> 
+  <div class="square__background" />
+  <div class="square__data">
+    <p>col {col}</p>
+    <p>row {row}</p>
+    <p>score {score.toFixed(2)}</p>
+  </div>
+
   <!-- <p>step {step}</p>
   <p>order {order}</p>
   <p>opacity {opacity.toFixed(2)}</p> -->
@@ -36,8 +40,13 @@
     position: relative;
     opacity: var(--opacity);
     border-radius: 3px;
+    display: grid;
 
-    &::after {
+    > * {
+      grid-area: 1/-1;
+    }
+
+    .square__background::after {
       content: '';
       display: block;
       position: absolute;
@@ -48,6 +57,10 @@
       opacity: var(--risk);
       transition: opacity 100ms;
       // opacity: 0;
+    }
+
+    .square__data {
+      z-index: 10;
     }
   }
 </style>

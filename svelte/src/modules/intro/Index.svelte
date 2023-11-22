@@ -1,4 +1,5 @@
 <script>
+  import { createNoise2D } from 'simplex-noise'
   import { texts } from '~/texts'
 
   import {
@@ -15,27 +16,43 @@
   export let progression
   export let pageProgression
 
+  const noise2D = createNoise2D()
+
   const squareWidth = 100
   const animationSpan = 32
   const squaresArray = generateSquaresArray()
 
-  $: apparitionProgression = Math.min(progression * 2, 1)
-  $: apparitionMappedProgression =
-    apparitionProgression * (squaresArray.length + animationSpan)
-  $: apparitionMappedProgressionIndex = Math.floor(apparitionMappedProgression)
+  const STEP_APPARITION = 'apparition'
+  const STEP_SCORE = 'score'
+  const STEP_SORT = 'sort'
 
-  $: scoreProgression = Math.max(progression * 2 - 1, 0)
-  $: scoreMappedProgression =
-    scoreProgression * (squaresArray.length + animationSpan)
-  $: scoreMappedProgressionIndex = Math.floor(apparitionMappedProgression)
+  const STEPS = [STEP_APPARITION, STEP_SCORE, STEP_SORT]
 
-  $: getSquareOpacity = (order) => {
+  $: getProgression = (step) => {
+    const stepIndex = STEPS.indexOf(step)
+
+    const rawValue = progression * STEPS.length - stepIndex
+    const clampedValue = Math.max(0, Math.min(rawValue, 1))
+
+    const mapped = clampedValue * (squaresArray.length + animationSpan)
+    const index = Math.floor(mapped)
+
+    return {
+      value: clampedValue,
+      mapped,
+      index,
+    }
+  }
+
+  $: getSquareOpacity = (square) => {
+    const { order } = square
+
     if (
-      order <= apparitionMappedProgressionIndex &&
-      order > apparitionMappedProgressionIndex - animationSpan
+      order <= getProgression(STEP_APPARITION).index &&
+      order > getProgression(STEP_APPARITION).index - animationSpan
     ) {
-      return (apparitionMappedProgression - order) / animationSpan
-    } else if (order <= apparitionMappedProgressionIndex - animationSpan) {
+      return (getProgression(STEP_APPARITION).mapped - order) / animationSpan
+    } else if (order <= getProgression(STEP_APPARITION).index - animationSpan) {
       return 1
     } else {
       return 0
@@ -45,14 +62,27 @@
   $: getSquareRisk = (square) => {
     const { score } = square
 
+    const scoreProgression = getProgression(STEP_SCORE).value
     if (scoreProgression === 0) return 0
 
-    const noiseValue = 0
+    if (scoreProgression === 1) {
+      const sortingLimit = 0.7
+      const sortProgression = getProgression(STEP_SORT).value
+      if (sortProgression === 0) return 0
 
-    return score * scoreProgression + noiseValue
+      if (score > sortingLimit) return score * scoreProgression + sortProgression
+      else return score * scoreProgression - sortProgression
+    } else {
+      const noiseValue = noise2D(
+        square.col * progression,
+        square.row * progression
+      )
+      return score * scoreProgression + noiseValue * (1 - scoreProgression)
+    }
   }
 
   $: getTextOpacity = () => {
+    console.log(currentPage)
     if (currentPage === 0) return { title: 1, publi: 1 }
     if (currentPage === 1) return { title: 1, publi: 0 }
     return { title: 0, publi: 0 }
@@ -81,7 +111,7 @@
         row={square.row + 1}
         score={square.score}
         step={square.step}
-        opacity={getSquareOpacity(square.order)}
+        opacity={getSquareOpacity(square)}
         risk={getSquareRisk(square)}
       />
     {/each}
