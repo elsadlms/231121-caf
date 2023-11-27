@@ -117,7 +117,7 @@ _pages:
 _id: page-empty
 _blocks:
   //../../module-intro,
-  ../../empty-scroll-100vh,
+  ../../empty-scroll-49vh,
   >>> split ,
   >>> map trim
   >>> map toRef
@@ -136,6 +136,7 @@ _blocks:
 _id: page-intro-text-1
 _blocks: 
 ../../module-intro,
+../../intro-text-1,
 ../../empty-scroll-100vh,
 >>> split ,
 >>> map trim
@@ -145,6 +146,7 @@ _blocks:
 _id: page-intro-text-2
 _blocks: 
 ../../module-intro,
+../../intro-text-2,
 ../../empty-scroll-100vh,
 >>> split ,
 >>> map trim
@@ -468,18 +470,17 @@ _trackScroll: true
 _depth: back
 _zIndex: 1
 _transitions: fade, 600
-//_content: https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-modules/intro.js
-_content: http://localhost:5173/build/intro.js
+_content: https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-modules/intro.js
 
 // BLOCS
 
-## empty-scroll-50vh
-_id: empty-scroll-50vh
+## empty-scroll-49vh
+_id: empty-scroll-49vh
 _type: html
 _content: CHUNKS/block-empty-scroll/content
 >>> toRef
 >>> toString
->>> replace {{HEIGHT}} 50vh
+>>> replace {{HEIGHT}} 49vh
 >>> toHtml
 
 ## empty-scroll-100vh

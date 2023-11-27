@@ -221,3 +221,7 @@ _credits:
 </p>
 </div>
 
+## module-intro
+_title: Age, situation familiale, revenus : comment la CAF note ses allocataires
+_publication: Publié le 5 décembre 2023
+_signature: Par Manon&nbsp;Romain, Adrien&nbsp;Sénécat, Elsa&nbsp;Delmas, Léa&nbsp;Girardot et Thomas&nbsp;Steffen
