@@ -39,13 +39,10 @@
   if (typeof LM_PAGE !== 'undefined')
     textData = LM_PAGE.database?.value?.texts?.['module-intro']
 
-  $: margins = isMobile ? 20 : 40
-  $: availableWidth = width - margins * 2
+  // $: squareWidth = Math.min(100, availableWidth / colsNumber)
+  $: squareWidth = isMobile ? 60 : 100
 
-  $: squareWidth = Math.min(100, availableWidth / colsNumber)
-  $: console.log(width)
-
-  const animationSpan = 32
+  const animationSpan = 24
   $: squaresArray = generateSquaresArray(gridComposition)
 
   console.log(squaresArray)
@@ -157,8 +154,11 @@
 
 <style lang="scss">
   .intro__container {
-    height: 100vh;
     width: 100%;
+    height: fit-content;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
     display: grid;
     align-items: center;
     justify-content: center;
@@ -188,8 +188,6 @@
   }
 
   .intro__title {
-    grid-column: 4 / 8;
-    grid-row: 3 / 5;
     font-family: var(
       --lmui-ff-marr-sans-condensed,
       var(--ff-marr-sans-condensed)
@@ -200,36 +198,16 @@
     line-height: 100%;
     transition: opacity 800ms;
     opacity: var(--title-opacity);
-    margin: 0;
+    margin: 0 auto;
     padding: 0 12px;
-
-    @media (max-width: 1200px) {
-      font-size: 32px;
-    }
-
-    @media (max-width: 900px) {
-      grid-column: 3 / 9;
-      grid-row: 3 / 5;
-    }
-
-    // @media (max-width: 800px) {
-    //   font-size: 42px;
-    //   max-width: 80%;
-    //   margin: 0 auto;
-    // }
+    max-width: 95vw;
 
     @media (max-width: 700px) {
-      max-width: 80%;
       font-size: 32px;
-      margin: 0 auto;
-      grid-column: 1 / 7;
-      grid-row: 5 / 7;
     }
 
     @media (max-width: 430px) {
-      max-width: 100%;
-      padding: 0 8px;
-      font-size: 24px;
+      font-size: 28px;
     }
   }
 
@@ -237,44 +215,47 @@
   .intro__publication {
     transition: opacity 800ms;
     opacity: var(--publi-opacity);
-    margin: 0;
+    margin: 0 auto;
     padding: 0 12px;
     font-size: 16px;
+    max-width: min(95vw, 300px);
 
-    @media (max-width: 1200px) {
+    @media (max-width: 900px) {
       font-size: 14px;
     }
+  }
 
-    // @media (max-width: 800px) {
-    //   max-width: 60%;
-    //   margin: 0 auto;
-    // }
-
-    @media (max-width: 700px) {
-      max-width: 80%;
-      margin: 0 auto;
-    }
+  .intro__title {
+    grid-column: 8 / 12;
+    grid-row: 5 / 7;
   }
 
   .intro__publication {
     align-self: flex-end;
-    grid-column: 4 / 8;
-    grid-row: 2;
-
-    @media (max-width: 700px) {
-      grid-column: 1 / 7;
-      grid-row: 4;
-    }
+    grid-column: 8 / 12;
+    grid-row: 4;
   }
 
   .intro__signature {
     align-self: flex-start;
-    grid-column: 4 / 8;
-    grid-row: 5;
+    grid-column: 8 / 12;
+    grid-row: 7;
+  }
 
-    @media (max-width: 700px) {
-      grid-column: 1 / 7;
+  .intro__container--mobile {
+    .intro__title {
+      grid-column: 1 / -1;
+      grid-row: 8 / 10;
+    }
+
+    .intro__publication {
+      grid-column: 1 / -1;
       grid-row: 7;
+    }
+
+    .intro__signature {
+      grid-column: 1 / -1;
+      grid-row: 10;
     }
   }
 </style>
