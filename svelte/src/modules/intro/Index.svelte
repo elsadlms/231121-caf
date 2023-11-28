@@ -5,7 +5,7 @@
   import { generateSquaresArray } from './generateSquaresArray'
   import { gridCompositionData } from './gridComposition'
 
-  import Square from '~/components/Square.svelte'
+  import Square from './Square.svelte'
 
   export let width
   export let height

@@ -9,6 +9,10 @@ export const loadModule = async () => {
     componentPromise = import('~/modules/nanograph/Index.svelte')
   }
 
+  if (import.meta.env.VITE_MODULE === 'graph') {
+    componentPromise = import('~/modules/graph/Index.svelte')
+  }
+
   if (import.meta.env.VITE_MODULE === 'simulation') {
     componentPromise = import('~/modules/simulation/Index.svelte')
   }

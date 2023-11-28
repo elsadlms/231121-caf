@@ -31,6 +31,12 @@
 </div>
 
 <style>
+
+.lm-svelte-module {
+  background-color: #001C37;
+  color: #fff;
+}
+
   :global(.lm-svelte-module p) {
     margin: 0;
   }
