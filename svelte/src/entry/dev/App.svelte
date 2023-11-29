@@ -6,7 +6,7 @@
   export let pContext
   export let currentPage = 0
 
-  let pagesNumber = 6
+  let pagesNumber = 14
 
   $: {
     currentPage = Math.floor(context.progression * pagesNumber)
@@ -57,22 +57,27 @@
   </div>
 
   <div class="module-container">
-  {#if Module !== undefined}
-    <svelte:component
-      this={Module}
-      width={context.width}
-      height={context.height}
-      {currentPage}
-      progression={context.progression}
-      pageProgression={context.pageProgression}
-    />
-  {/if}
+    {#if Module !== undefined}
+      <svelte:component
+        this={Module}
+        width={context.width}
+        height={context.height}
+        {currentPage}
+        progression={context.progression}
+        pageProgression={context.pageProgression}
+      />
+    {/if}
   </div>
 </div>
 
 <style lang="scss">
   :global(body) {
     margin: 0;
+  }
+
+  .module-container {
+    background-color: #001c37;
+    color: #fff;
   }
 
   .dev-container {
@@ -87,6 +92,7 @@
     z-index: 10;
     margin: 12px;
     background-color: #00000033;
+    color: #fff;
     padding: 20px;
     border-radius: 3px;
 

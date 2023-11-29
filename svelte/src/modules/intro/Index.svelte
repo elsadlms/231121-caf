@@ -29,10 +29,6 @@
     ...gridComposition.rows.thirdStep,
   ].length
 
-  $: console.log(gridComposition)
-  $: console.log(colsNumber)
-  $: console.log(rowsNumber)
-
   const noise2D = createNoise2D()
 
   let textData = texts.intro

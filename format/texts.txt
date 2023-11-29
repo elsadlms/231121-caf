@@ -12,42 +12,6 @@ _text-3:
 <p>INTRO 3</p>
 
 
-## part-1
-
-_text-1: 
-<p>PART 1 TEXT 1</p>
-
-_text-2: 
-<p>PART 1 TEXT 2</p>
-
-_text-3:
-<p>PART 1 TEXT 3</p>
-
-
-## part-2
-
-_text-1: 
-<p>PART 2 TEXT 1</p>
-
-_text-2: 
-<p>PART 2 TEXT 2</p>
-
-_text-3:
-<p>PART 2 TEXT 3</p>
-
-
-## part-3
-
-_text-1: 
-<p>PART 3 TEXT 1</p>
-
-_text-2: 
-<p>PART 3 TEXT 2</p>
-
-_text-3:
-<p>PART 3 TEXT 3</p>
-
-
 ## plan
 
 _text-1:
@@ -201,6 +165,55 @@ _text-30:
 </p>
 
 
+## simulations
+
+_simulation-1-1:
+Prenons un exemple fictif : voilà Nathalie, 51 ans, salariée.
+
+_simulation-1-2:
+Elle est mariée avec Philippe, 57 ans, salarié.
+
+_simulation-1-3:
+Ils gagnent chacun 1500 euros par mois.
+
+_simulation-1-4:
+Elle a 2 enfants : un de 16 ans, un de 18 ans.
+
+_simulation-1-5:
+Elle n'a pas déménagé depuis 18 mois.
+
+_simulation-1-6:
+Elle a envoyé un mail à sa CAF il y a 6 mois.
+
+_simulation-2-1:
+Deuxième élément : toutes les variables sont traitées comme des catégories. Un exemple, si votre partenaire a moins de 60 ans, votre score est diminué, mais le jour de son 60e anniversaire, la tendance s'inverse brusquement.
+
+_simulation-2-2:
+Si le mari de Nathalie avait trois ans de plus, le score augmenterait soudainement.
+
+_simulation-2-3:
+Ce sont des "effets de seuil". La CNAF ne nous a pas expliqué ce choix.
+
+_simulation-3-1:
+Reprenons le cas de Nathalie, salariée dans le privé.
+
+_simulation-3-2:
+Si elle est handicapée à plus de 80 % depuis plus de 3 ans et  déclare ses revenus trimestriels à la CAF, comme la loi l'y oblige.
+
+_simulation-3-3:
+Si maintenant Nathalie se sépare de son mari et élève seule ses deux enfants.
+
+_simulation-3-4:
+Son revenu est divisé par deux, son loyer représente désormais 50 % de son revenu.
+
+_simulation-3-5:
+Automatiquement, sa séparation et ses enfants à charge la rendent suspecte aux yeux de l'algorithme.
+
+_simulation-4-1:
+Si Nathalie et Philippe ont tous deux des hauts revenus stables, et touchent les allocations familiales pour leurs deux enfants, leur score ne sera jamais très élevé et ils auront donc très peu de chances d'être contrôlés.
+
+
+
 ## end
 
 _credits:
@@ -222,6 +235,25 @@ _credits:
 </div>
 
 ## module-intro
-_title: Age, situation familiale, revenus : comment la CAF note ses allocataires
+_title: Age, situation familiale, revenus&nbsp;: comment la CAF note ses allocataires
 _publication: Publié le 5 décembre 2023
 _signature: Par Manon&nbsp;Romain, Adrien&nbsp;Sénécat, Elsa&nbsp;Delmas, Léa&nbsp;Girardot et Thomas&nbsp;Steffen
+
+## module-simulation
+_scoreLimit: Risque&nbsp;de&nbsp;contrôle
+_name: Nathalie
+_conjoint1: Conjoint de
+_conjoint2: ans
+_femme: Femme
+_age: 51 ans
+_situationProSalariee: Salariée
+_situationPersoMariee: Mariée
+_situationPersoDivorcee: Divorcée
+_conjointAge: Conjoint de 57 ans
+_revenus1484: Revenus mensuels supérieurs à 1484 euros
+_revenus942: Revenus mensuels supérieurs à 942 euros
+_revenus577: Revenus mensuels supérieurs à 577 euros
+_enfantsMoins18ans: Deux enfants de 16 ans et 18 ans
+_pasDemenage18mois: Pas déménagé depuis 18 mois
+_mail6mois: Mail à la CAF il y a 6 mois
+_toucheAAH: Touche l’allocation adulte handicapé

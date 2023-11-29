@@ -1,7 +1,7 @@
-import { likelihood2014 } from './likelihood2014'
+import { llikelihood2014 } from './llikelihood2014'
 import { variables2014 } from './variables2014'
 
 export {
-  likelihood2014,
+  llikelihood2014,
   variables2014
 }

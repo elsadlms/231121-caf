@@ -1,9 +1,59 @@
 // CONFIG
 
-# page_config
-## CONFIG
+# PAGE_CONFIG
+## config
 
+_hideHeader: true
 _css:
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.caf-header-root {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+}
+
+.caf-header-root .fill-1 {
+  fill: #ffffff;
+}
+
+.caf-header-root .fill-2 {
+  fill: #ffffff66;
+}
+
+.lm-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caf-scrllgngn-root {
+  --caf-c-dark: #011D3A;
+  --caf-c-light-blue: #cde6e7;
+  --caf-c-blue: #48FFFF;
+  --caf-c-red: #FF1B1B;
+  --caf-c-background: var(--caf-c-dark);
+  --caf-ff-roboto-mono: 'Roboto Mono', monospace;
+  // WIP suppr 'transparent' dans la coquille
+  background-color: var(--caf-c-background) !important;
+  color: #fff;
+}
+
+.caf-scrolling-text {
+  height: 100vh;
+  width: 100%;
+}
+
+.caf-scrolling-text__text {
+  max-width: 560px;
+  font-family: var(--lmui-ff-marr-sans, var(--ff-marr-sans));
+  line-height: 140%;
+}
+
 
 // SLOTS
 
@@ -75,15 +125,30 @@ _pages:
 ../../page-intro-text-3,
 
 // déroulé
+../../page-simulation-1-1,
+../../page-simulation-1-2,
+../../page-simulation-1-3,
+../../page-simulation-1-4,
+../../page-simulation-1-5,
+../../page-simulation-1-6,
 ../../page-1,
 ../../page-2,
 ../../page-3,
+../../page-simulation-2-1,
+../../page-simulation-2-2,
+../../page-simulation-2-3,
 ../../page-4,
 ../../page-5,
 ../../page-6,
+../../page-simulation-3-1,
+../../page-simulation-3-2,
+../../page-simulation-3-3,
+../../page-simulation-3-4,
+../../page-simulation-3-5,
 ../../page-7,
 ../../page-8,
 ../../page-9,
+../../page-simulation-4-1,
 ../../page-10,
 ../../page-11,
 ../../page-12,
@@ -160,6 +225,157 @@ _blocks:
 >>> split ,
 >>> map trim
 >>> map toRef
+
+## page-simulation-1-1
+_id: page-simulation-1-1
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-1,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-1-2
+_id: page-simulation-1-2
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-2,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-1-3
+_id: page-simulation-1-3
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-3,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-1-4
+_id: page-simulation-1-4
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-4,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-1-5
+_id: page-simulation-1-5
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-5,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-1-6
+_id: page-simulation-1-6
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-6,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-2-1
+_id: page-simulation-2-1
+_blocks: 
+../../module-simulation,
+../../text-simulation-2-1,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-2-2
+_id: page-simulation-2-2
+_blocks: 
+../../module-simulation,
+../../text-simulation-2-2,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-2-3
+_id: page-simulation-2-3
+_blocks: 
+../../module-simulation,
+../../text-simulation-2-3,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-3-1
+_id: page-simulation-3-1
+_blocks: 
+../../module-simulation,
+../../text-simulation-3-1,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-3-2
+_id: page-simulation-3-2
+_blocks: 
+../../module-simulation,
+../../text-simulation-3-2,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-3-3
+_id: page-simulation-3-3
+_blocks: 
+../../module-simulation,
+../../text-simulation-3-3,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-3-4
+_id: page-simulation-3-4
+_blocks: 
+../../module-simulation,
+../../text-simulation-3-4,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-3-5
+_id: page-simulation-3-5
+_blocks: 
+../../module-simulation,
+../../text-simulation-3-5,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-4-1
+_id: page-simulation-4-1
+_blocks: 
+../../module-simulation,
+../../text-simulation-4-1,
+../../empty-scroll-100vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
 
 // partie 1
 ## part-1-page-1
@@ -472,6 +688,15 @@ _zIndex: 1
 _transitions: fade, 600
 _content: https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-modules/intro.js
 
+## module-simulation
+_id: module-simulation
+_type: module
+_trackScroll: false
+_depth: back
+_zIndex: 1
+_transitions: fade, 600
+_content: https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-modules/simulation.js
+
 // BLOCS
 
 ## empty-scroll-49vh
@@ -517,6 +742,141 @@ _content: CHUNKS/block-intro-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/intro/text-3
+>>> toHtml
+
+## text-simulation-1-1
+_id: text-simulation-1-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-1
+>>> toHtml
+
+## text-simulation-1-2
+_id: text-simulation-1-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-2
+>>> toHtml
+
+## text-simulation-1-3
+_id: text-simulation-1-3
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-3
+>>> toHtml
+
+## text-simulation-1-4
+_id: text-simulation-1-4
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-4
+>>> toHtml
+
+## text-simulation-1-5
+_id: text-simulation-1-5
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-5
+>>> toHtml
+
+## text-simulation-1-6
+_id: text-simulation-1-6
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-6
+>>> toHtml
+
+## text-simulation-2-1
+_id: text-simulation-2-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-2-1
+>>> toHtml
+
+## text-simulation-2-2
+_id: text-simulation-2-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-2-2
+>>> toHtml
+
+## text-simulation-2-3
+_id: text-simulation-2-3
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-2-3
+>>> toHtml
+
+## text-simulation-3-1
+_id: text-simulation-3-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-1
+>>> toHtml
+
+## text-simulation-3-2
+_id: text-simulation-3-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-2
+>>> toHtml
+
+## text-simulation-3-3
+_id: text-simulation-3-3
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-3
+>>> toHtml
+
+## text-simulation-3-4
+_id: text-simulation-3-4
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-4
+>>> toHtml
+
+## text-simulation-3-5
+_id: text-simulation-3-5
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-5
+>>> toHtml
+
+## text-simulation-4-1
+_id: text-simulation-4-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/simulations/simulation-4-1
 >>> toHtml
 
 ## part-1-text-1
@@ -815,4 +1175,6 @@ _content: CHUNKS/block-scrolling-text/content
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/text-30
 >>> toHtml
+
+
 

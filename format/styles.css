@@ -23,6 +23,17 @@ body {
   justify-content: center;
 }
 
+.caf-scrllgngn-root {
+  --caf-c-dark: #011D3A;
+  --caf-c-light-blue: #cde6e7;
+  --caf-c-blue: #48FFFF;
+  --caf-c-red: #FF1B1B;
+  --caf-c-background: var(--caf-c-dark);
+  --caf-ff-roboto-mono: 'Roboto Mono', monospace;
+  background-color: var(--caf-c-background) !important;
+  color: #fff;
+}
+
 .caf-scrolling-text {
   height: 100vh;
   width: 100%;

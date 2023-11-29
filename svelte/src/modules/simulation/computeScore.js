@@ -1,4 +1,4 @@
-import { variables2014, likelihood2014 } from './scoreData'
+import { variables2014, llikelihood2014 } from './scoreData'
 
 function set_compute_score() {
   const coeff_vars = new Map()
@@ -14,7 +14,7 @@ function set_compute_score() {
   /********/
   let extent_min = -1.73654727320913,
     extent_max = -1.73654727320913
-  const group_likelihood = Object.groupBy(likelihood2014, (x) => x.Variable)
+  const group_likelihood = Object.groupBy(llikelihood2014, (x) => x.Variable)
   for (let variable of variables2014) {
     const v = variable.Variable
     const val = group_likelihood[v]
@@ -67,3 +67,8 @@ function set_compute_score() {
 }
 
 export const computeScore = set_compute_score()
+
+console.log({AGERESP_quant: "MISSAUT", SEQFAM:"456XX", TOPEN19:"0", TOPENF1218_P:"1", ABANEU:"AUCUN", SEQACR:"ACT_X__X_", NADRESS18_quant: "0 < x <1", OPT_NMODLOY18: "01:LOW -0.5, MISSIN", TITUBANC:"2", OPT_MACT12: "02:0.5-14.5", MOINSCDO_quant:"49 ET PLUS", OPT_MOIPIE_MAIL: "03:4.5-HIGH", COMPANTRIM: "BAISSE", RUC_RED_quant:"577 < x <942", TXEFF_P:"35ETPLUS"})
+console.log(
+  computeScore({AGERESP_quant: "MISSAUT", SEQFAM:"456XX", TOPEN19:"0", TOPENF1218_P:"1", ABANEU:"AUCUN", SEQACR:"ACT_X__X_", NADRESS18_quant: "0 < x <1", OPT_NMODLOY18: "01:LOW -0.5, MISSIN", TITUBANC:"2", OPT_MACT12: "02:0.5-14.5", MOINSCDO_quant:"49 ET PLUS", OPT_MOIPIE_MAIL: "03:4.5-HIGH", COMPANTRIM: "BAISSE", RUC_RED_quant:"577 < x <942", TXEFF_P:"35ETPLUS"})
+)

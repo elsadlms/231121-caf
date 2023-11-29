@@ -3,15 +3,19 @@
   import { texts } from '~/texts'
 
   export let value
-  export let previousValue
+  // export let previousValue
+  export let displayRange
+  export let minValue
+  export let maxValue
 
-  const riskLimit = 0.7
+  console.log(minValue)
+  console.log(maxValue)
+
+  const riskLimit = 0.5
 
   const colorScale = [
-    { range: [0, 0.05], color: '#D9FFFF' },
-    { range: [0.05, 0.2], color: '#FFE963' },
-    { range: [0.2, 0.6], color: 'orange' },
-    { range: [0.6, 1], color: 'red' },
+    { range: [0, 0.5], color: '#BE6D6D' },
+    { range: [0.5, 1], color: '#FF1B1B' },
   ]
 
   const getScoreColor = (value) => {
@@ -27,73 +31,132 @@
   if (typeof LM_PAGE !== 'undefined')
     textData = LM_PAGE.database?.value?.texts?.['module-simulation']
 
-  $: console.log(value)
+  // $: console.log(value * 10)
+
+  $: containerClasses = [
+    'score__container',
+    displayRange ? 'score__container--range' : '',
+  ]
 
   $: inlineStyle = [
     `--limit-offset: ${riskLimit * 100}%;`,
-    `--score-width: ${value * 100}%;`,
-    `--score-fill: ${getScoreColor(value)};`,
+    `--score-value: ${value * 100}%;`,
+    `--score-min: ${minValue * 100}%;`,
+    `--score-max: ${maxValue * 100}%;`,
+    `--score-fill-left: #48FFFF;`,
+    `--score-fill-right: ${getScoreColor(value * 10)};`,
   ]
 </script>
 
-<div class="score__container" style={inlineStyle.join(' ')}>
+<div class={containerClasses.join(' ')} style={inlineStyle.join(' ')}>
   <div class="score__bar">
     <div class="score__bar__shadow"></div>
     <div class="score__bar__fill"></div>
-    <div class="score__bar__limit">
-      <span>Risque&nbsp;de&nbsp;contrôle</span>
-    </div>
+    <div class="score__bar__range"></div>
+    <div class="score__bar__limit"></div>
   </div>
   <!-- <p>{value}</p> -->
 </div>
 
 <style lang="scss">
   .score__bar {
+    --score-fill-gradient: linear-gradient(
+      270deg,
+      var(--score-fill-right) 0%,
+      var(--score-fill-left) 100%
+    );
     display: grid;
     height: 10px;
     width: 300px;
-    background-color: #2a4555;
+    max-width: 70vw;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
 
     > * {
       grid-area: 1 / -1;
     }
+
+    &::before,
+    &::after {
+      --pos-offset: -1.3em;
+      display: block;
+      line-height: 1em;
+      font-size: 20px;
+      top: -50%;
+      font-weight: 600;
+      font-family: var(--caf-ff-roboto-mono);
+    }
+
+    &::before {
+      content: '0';
+      position: absolute;
+      left: var(--pos-offset);
+      color: var(--caf-c-blue);
+      text-shadow: 0px 1px 4px rgba(72, 255, 255, 0.75);
+    }
+
+    &::after {
+      content: '1';
+      position: absolute;
+      right: var(--pos-offset);
+      color: var(--caf-c-red);
+      text-shadow: 0px 1px 4px rgba(255, 27, 27, 0.75);
+    }
   }
 
   .score__bar__fill {
-    background-color: var(--score-fill);
-    width: var(--score-width);
-    transition: width 600ms, background-color 600ms;
+    border-radius: 10px;
+    background: var(--score-fill-gradient);
+    width: var(--score-value);
+    transition:
+      width 600ms,
+      background-color 600ms;
   }
 
   .score__bar__limit {
-    background-color: red;
-    width: 0;
+    border-right: 1px dashed #fff;
+    height: 30px;
     position: absolute;
+    top: -100%;
     left: var(--limit-offset);
     display: grid;
     justify-content: center;
     justify-items: center;
+  }
 
-    > * {
-      grid-area: 1 / -1;
-    }
+  .score__bar__range {
+    border-radius: 10px;
+    background: red;
+    width: 2px;
+    left: var(--score-min);
+    transition:
+      width 600ms,
+      background-color 600ms;
 
     &::after {
-      content: '';
       display: block;
-      height: 24px;
-      width: 12px;
-      background-image: url('https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/arrow.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      content: '';
+      position: absolute;
+      left: var(--score-max);
+      height: 10px;
+      border-right: 2px solid red;
+    }
+  }
+
+  .score__container {
+    .score__bar__range {
+      display: none;
+    }
+  }
+
+  .score__container--range {
+    .score__bar__fill {
+      display: none;
     }
 
-    span {
-      text-transform: uppercase;
-      position: absolute;
-      top: calc(100% + 4px);
+    .score__bar__range {
+      display: block;
     }
   }
 </style>

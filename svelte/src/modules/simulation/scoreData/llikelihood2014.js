@@ -1,4 +1,4 @@
-export const likelihood2014 = [
+export const llikelihood2014 = [
   {
     Choice: 'var 1 = -1',
     Variable: 'ABANEU',
