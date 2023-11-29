@@ -123,53 +123,49 @@ _pages:
 ../../page-intro-text-1,
 ../../page-intro-text-2,
 ../../page-intro-text-3,
+../../page-intro-text-4,
+../../page-intro-text-5,
+../../page-intro-text-6,
 
 // déroulé
+../../page-text-1,
+../../page-text-2,
+../../page-nanog-1,
+../../page-nanog-2,
+../../page-nanog-3,
+../../page-nanog-4,
+../../page-nanog-5,
+../../page-text-3,
+../../page-text-4,
+../../page-text-5,
+../../page-text-6,
 ../../page-simulation-1-1,
 ../../page-simulation-1-2,
 ../../page-simulation-1-3,
 ../../page-simulation-1-4,
 ../../page-simulation-1-5,
 ../../page-simulation-1-6,
-../../page-1,
-../../page-2,
-../../page-3,
+../../page-simulation-1-7,
+../../page-text-7,
+../../page-text-8,
+../../page-text-9,
 ../../page-simulation-2-1,
 ../../page-simulation-2-2,
 ../../page-simulation-2-3,
-../../page-4,
-../../page-5,
-../../page-6,
+../../page-text-10,
+../../page-text-11,
+../../page-text-12,
+../../page-text-13,
 ../../page-simulation-3-1,
 ../../page-simulation-3-2,
 ../../page-simulation-3-3,
 ../../page-simulation-3-4,
 ../../page-simulation-3-5,
-../../page-7,
-../../page-8,
-../../page-9,
+../../page-text-14,
 ../../page-simulation-4-1,
-../../page-10,
-../../page-11,
-../../page-12,
-../../page-13,
-../../page-14,
-../../page-15,
-../../page-16,
-../../page-17,
-../../page-18,
-../../page-19,
-../../page-20,
-../../page-21,
-../../page-22,
-../../page-23,
-../../page-24,
-../../page-25,
-../../page-26,
-../../page-27,
-../../page-28,
-../../page-29,
-../../page-30,
+../../page-text-15,
+../../page-text-16,
+../../page-text-17,
 
 // end
 ../../page-credits,
@@ -202,7 +198,7 @@ _id: page-intro-text-1
 _blocks: 
 ../../module-intro,
 ../../intro-text-1,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -212,7 +208,7 @@ _id: page-intro-text-2
 _blocks: 
 ../../module-intro,
 ../../intro-text-2,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -221,7 +217,84 @@ _blocks:
 _id: page-intro-text-3
 _blocks: 
 ../../intro-text-3,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-intro-text-4
+_id: page-intro-text-4
+_blocks: 
+../../intro-text-4,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-intro-text-5
+_id: page-intro-text-5
+_blocks: 
+../../intro-text-5,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-intro-text-6
+_id: page-intro-text-6
+_blocks: 
+../../intro-text-6,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-nanog-1
+_id: page-nanog-1
+_blocks: 
+//../../module-nanog,
+../../text-nanog-1,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-nanog-2
+_id: page-nanog-2
+_blocks: 
+//../../module-nanog,
+../../text-nanog-2,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-nanog-3
+_id: page-nanog-3
+_blocks: 
+//../../module-nanog,
+../../text-nanog-3,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-nanog-4
+_id: page-nanog-4
+_blocks: 
+//../../module-nanog,
+../../text-nanog-4,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-nanog-5
+_id: page-nanog-5
+_blocks: 
+//../../module-nanog,
+../../text-nanog-5,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -231,7 +304,7 @@ _id: page-simulation-1-1
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-1-1,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -241,7 +314,7 @@ _id: page-simulation-1-2
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-1-2,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -251,7 +324,7 @@ _id: page-simulation-1-3
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-1-3,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -261,7 +334,7 @@ _id: page-simulation-1-4
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-1-4,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -271,7 +344,7 @@ _id: page-simulation-1-5
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-1-5,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -281,7 +354,7 @@ _id: page-simulation-1-6
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-1-6,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -291,7 +364,7 @@ _id: page-simulation-2-1
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-2-1,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -301,7 +374,7 @@ _id: page-simulation-2-2
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-2-2,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -311,7 +384,7 @@ _id: page-simulation-2-3
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-2-3,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -321,7 +394,7 @@ _id: page-simulation-3-1
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-3-1,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -331,7 +404,7 @@ _id: page-simulation-3-2
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-3-2,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -341,7 +414,7 @@ _id: page-simulation-3-3
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-3-3,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -351,7 +424,7 @@ _id: page-simulation-3-4
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-3-4,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -361,7 +434,7 @@ _id: page-simulation-3-5
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-3-5,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -371,308 +444,285 @@ _id: page-simulation-4-1
 _blocks: 
 ../../module-simulation,
 ../../text-simulation-4-1,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-
-// partie 1
-## part-1-page-1
-_id: part-1-page-1
-_blocks: 
-../../part-1-text-1,
-../../empty-scroll-100vh,
->>> split ,
->>> map trim
->>> map toRef
-
-## part-1-page-2
-_id: part-1-page-2
-_blocks: 
-../../part-1-text-2,
-../../empty-scroll-100vh,
->>> split ,
->>> map trim
->>> map toRef
-
-## part-1-page-3
-
-_id: part-1-page-3
-_blocks: 
-../../part-1-text-3,
-../../empty-scroll-100vh,
->>> split ,
->>> map trim
->>> map toRef
-
-// plan
-## page-1
-_id: page-1
+## page-text-1
+_id: page-text-1
 _blocks: 
 ../../block-text-1,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-2
-_id: page-2
+## page-text-2
+_id: page-text-2
 _blocks: 
 ../../block-text-2,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-3
-_id: page-3
+## page-text-3
+_id: page-text-3
 _blocks: 
 ../../block-text-3,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-4
-_id: page-4
+## page-text-4
+_id: page-text-4
 _blocks: 
 ../../block-text-4,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-5
-_id: page-5
+## page-text-5
+_id: page-text-5
 _blocks: 
 ../../block-text-5,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-6
-_id: page-6
+## page-text-6
+_id: page-text-6
 _blocks: 
 ../../block-text-6,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-7
-_id: page-7
+## page-text-7
+_id: page-text-7
 _blocks: 
 ../../block-text-7,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-8
-_id: page-8
+## page-text-8
+_id: page-text-8
 _blocks: 
 ../../block-text-8,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-9
-_id: page-9
+## page-text-9
+_id: page-text-9
 _blocks: 
 ../../block-text-9,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-10
-_id: page-10
+## page-text-10
+_id: page-text-10
 _blocks: 
 ../../block-text-10,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-11
-_id: page-11
+## page-text-11
+_id: page-text-11
 _blocks: 
 ../../block-text-11,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-12
-_id: page-12
+## page-text-12
+_id: page-text-12
 _blocks: 
 ../../block-text-12,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-13
-_id: page-13
+## page-text-13
+_id: page-text-13
 _blocks: 
 ../../block-text-13,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-14
-_id: page-14
+## page-text-14
+_id: page-text-14
 _blocks: 
 ../../block-text-14,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-15
-_id: page-15
+## page-text-15
+_id: page-text-15
 _blocks: 
 ../../block-text-15,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-16
-_id: page-16
+## page-text-16
+_id: page-text-16
 _blocks: 
 ../../block-text-16,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-17
-_id: page-17
+## page-text-17
+_id: page-text-17
 _blocks: 
 ../../block-text-17,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-18
-_id: page-18
+## page-text-18
+_id: page-text-18
 _blocks: 
 ../../block-text-18,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-19
-_id: page-19
+## page-text-19
+_id: page-text-19
 _blocks: 
 ../../block-text-19,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-20
-_id: page-20
+## page-text-20
+_id: page-text-20
 _blocks: 
 ../../block-text-20,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-21
-_id: page-21
+## page-text-21
+_id: page-text-21
 _blocks: 
 ../../block-text-21,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-22
-_id: page-22
+## page-text-22
+_id: page-text-22
 _blocks: 
 ../../block-text-22,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-23
-_id: page-23
+## page-text-23
+_id: page-text-23
 _blocks: 
 ../../block-text-23,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-24
-_id: page-24
+## page-text-24
+_id: page-text-24
 _blocks: 
 ../../block-text-24,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-25
-_id: page-25
+## page-text-25
+_id: page-text-25
 _blocks: 
 ../../block-text-25,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-26
-_id: page-26
+## page-text-26
+_id: page-text-26
 _blocks: 
 ../../block-text-26,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-27
-_id: page-27
+## page-text-27
+_id: page-text-27
 _blocks: 
 ../../block-text-27,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-28
-_id: page-28
+## page-text-28
+_id: page-text-28
 _blocks: 
 ../../block-text-28,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-29
-_id: page-29
+## page-text-29
+_id: page-text-29
 _blocks: 
 ../../block-text-29,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
 >>> map toRef
 
-## page-30
-_id: page-30
+## page-text-30
+_id: page-text-30
 _blocks: 
 ../../block-text-30,
-../../empty-scroll-100vh,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-credits
+_id: page-credits
+_blocks: 
+../../block-credits,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -687,6 +737,15 @@ _depth: back
 _zIndex: 1
 _transitions: fade, 600
 _content: https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-modules/intro.js
+
+## module-nanog
+_id: module-nanog
+_type: module
+_trackScroll: false
+_depth: back
+_zIndex: 1
+_transitions: fade, 600
+_content: https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-modules/nanog.js
 
 ## module-simulation
 _id: module-simulation
@@ -717,6 +776,15 @@ _content: CHUNKS/block-empty-scroll/content
 >>> replace {{HEIGHT}} 100vh
 >>> toHtml
 
+## empty-scroll-10vh
+_id: empty-scroll-10vh
+_type: html
+_content: CHUNKS/block-empty-scroll/content
+>>> toRef
+>>> toString
+>>> replace {{HEIGHT}} 10vh
+>>> toHtml
+
 ## intro-text-1
 _id: intro-text-1
 _type: html
@@ -744,13 +812,58 @@ _content: CHUNKS/block-intro-text/content
 >>> replaceWithRef {{TEXT}} texts/intro/text-3
 >>> toHtml
 
+## text-nanog-1
+_id: text-nanog-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/nanog-1
+>>> toHtml
+
+## text-nanog-2
+_id: text-nanog-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/nanog-2
+>>> toHtml
+
+## text-nanog-3
+_id: text-nanog-3
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/nanog-3
+>>> toHtml
+
+## text-nanog-4
+_id: text-nanog-4
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/nanog-4
+>>> toHtml
+
+## text-nanog-5
+_id: text-nanog-5
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/nanog-5
+>>> toHtml
+
 ## text-simulation-1-1
 _id: text-simulation-1-1
 _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-1
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-1
 >>> toHtml
 
 ## text-simulation-1-2
@@ -759,7 +872,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-2
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-2
 >>> toHtml
 
 ## text-simulation-1-3
@@ -768,7 +881,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-3
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-3
 >>> toHtml
 
 ## text-simulation-1-4
@@ -777,7 +890,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-4
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-4
 >>> toHtml
 
 ## text-simulation-1-5
@@ -786,7 +899,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-5
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-5
 >>> toHtml
 
 ## text-simulation-1-6
@@ -795,7 +908,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-1-6
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-6
 >>> toHtml
 
 ## text-simulation-2-1
@@ -804,7 +917,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-2-1
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-2-1
 >>> toHtml
 
 ## text-simulation-2-2
@@ -813,7 +926,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-2-2
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-2-2
 >>> toHtml
 
 ## text-simulation-2-3
@@ -822,7 +935,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-2-3
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-2-3
 >>> toHtml
 
 ## text-simulation-3-1
@@ -831,7 +944,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-1
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-3-1
 >>> toHtml
 
 ## text-simulation-3-2
@@ -840,7 +953,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-2
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-3-2
 >>> toHtml
 
 ## text-simulation-3-3
@@ -849,7 +962,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-3
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-3-3
 >>> toHtml
 
 ## text-simulation-3-4
@@ -858,7 +971,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-4
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-3-4
 >>> toHtml
 
 ## text-simulation-3-5
@@ -867,7 +980,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-3-5
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-3-5
 >>> toHtml
 
 ## text-simulation-4-1
@@ -876,7 +989,7 @@ _type: html
 _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
->>> replaceWithRef {{TEXT}} texts/simulations/simulation-4-1
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-4-1
 >>> toHtml
 
 ## part-1-text-1
@@ -1176,5 +1289,12 @@ _content: CHUNKS/block-scrolling-text/content
 >>> replaceWithRef {{TEXT}} texts/plan/text-30
 >>> toHtml
 
-
+## block-credits
+_id: block-credits
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/end/credits
+>>> toHtml
 

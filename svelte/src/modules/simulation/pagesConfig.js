@@ -183,6 +183,35 @@ const part1 = [
       OPT_MOIPIE_MAIL: '03:4.5-HIGH',
     },
   },
+  {
+    id: 6,
+    part: 1,
+    params: {
+      genre: STATICS.FEMME,
+      age: STATICS.AGE,
+      situation_pro: STATICS.SITUATION_PRO_SALARIEE,
+      situation_perso: STATICS.SITUATION_PERSO_MARIEE,
+      conjoint_age: STATICS.CONJOINT_AGE,
+      revenus: STATICS.REVENUS_942,
+      enfants: STATICS.ENFANTS_MOINS_18_ANS,
+      demenagements: STATICS.PAS_DEMENAGE_18_MOIS,
+      mail: STATICS.MAIL_6_MOIS,
+    },
+    scoreData: {
+      AGERESP_quant: 'MISSAUT',
+      SEQFAM: '23XXX',
+      TOPEN19: '0',
+      TOPENF1218_P: '1',
+      ABANEU: 'AUCUN',
+      SEQACR: 'ACT_X__X_',
+      NADRESS18_quant: '0 < x <1',
+      OPT_NMODLOY18: '01:LOW -0.5, MISSIN',
+      TITUBANC: '2',
+      OPT_MACT12: '03:14.5-HIGH',
+      MOINSCDO_quant: '49 ET PLUS',
+      OPT_MOIPIE_MAIL: '03:4.5-HIGH',
+    },
+  },
 ]
 
 // effets de seuil
