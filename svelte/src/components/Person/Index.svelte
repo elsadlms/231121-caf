@@ -1,34 +1,54 @@
 <script>
   import { getRandomFromArray } from '~/utils.js'
-  import { menArray, womenArray } from './faces'
+  import { faces } from './faces'
 
   export let gender
-  export let nathalie
-  export let color
+  export let nathalie = false
+  export let color = 'lightBlue'
+  export let secondLayer = false
+  export let secondColor = 'red'
+  export let secondLayerOpacity = 0
 
-  $: svg =
-    nathalie === true
-      ? womenArray[0]
-      : gender === 'woman'
-        ? getRandomFromArray(womenArray)
-        : getRandomFromArray(menArray)
+  const getFace = (nathalie, gender) => {
+    if (nathalie === true) return faces['women'][0]
+    if (gender === 'woman') return getRandomFromArray(faces['women'])
+    if (gender === 'man') return getRandomFromArray(faces['men'])
+    return getRandomFromArray([...faces['women'], ...faces['men']])
+  }
 
-  $: inlineStyle = [`--stroke-color: ${color};`]
+  $: selectedFace = getFace(nathalie, gender)
+
+  $: inlineStyle = [`--second-layer-opacity: ${secondLayerOpacity};`]
 </script>
 
+<!-- svelte-ignore a11y-missing-attribute -->
 <div class="person__container" style={inlineStyle.join(' ')}>
-  {@html svg}
+  <!-- <div class="person__svg">{@html svg}</div> -->
+
+  <img class="person__img person__img--first-layer" src={selectedFace[color]} />
+  {#if secondLayer === true}
+    <img
+      class="person__img person__img--second-layer"
+      src={selectedFace[secondColor]}
+    />
+  {/if}
 </div>
 
 <style lang="scss">
-  :global(.person__container svg) {
+  .person__container {
+    display: grid;
+
+    > * {
+      grid-area: 1/-1;
+    }
+  }
+
+  .person__img {
     max-width: 100%;
     height: 100%;
   }
 
-  :global(.person__container svg rect),
-  :global(.person__container svg path) {
-    stroke: var(--stroke-color) !important;
-    stroke-width: 4px !important;
+  .person__img.person__img--second-layer {
+    opacity: var(--second-layer-opacity);
   }
 </style>

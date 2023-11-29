@@ -12,7 +12,6 @@ const canBeHighScore = (square) => {
 }
 
 export const generateSquaresArray = (grid) => {
-  console.log(grid)
   const array = []
 
   const colsNumber = [
@@ -26,12 +25,7 @@ export const generateSquaresArray = (grid) => {
     ...grid.rows.thirdStep,
   ].length
 
-  console.log(colsNumber)
-  console.log(rowsNumber)
-
   const squaresNumber = colsNumber * rowsNumber
-
-  console.log(squaresNumber)
 
   // if (array.length === squaresNumber) return array
   // if (array.length > 0) array.length = 0
@@ -62,14 +56,6 @@ export const generateSquaresArray = (grid) => {
     (_el, i) => i + firstStepCount + secondStepCount
   )
 
-  console.log(firstStepCount)
-  console.log(secondStepCount)
-  console.log(thirdStepCount)
-
-  console.log(availableFirstStepOrders)
-  console.log(availableSecondStepOrders)
-  console.log(availableThirdStepOrders)
-
   let index = 0
   for (let row = 0; row < rowsNumber; row++) {
     for (let col = 0; col < colsNumber; col++) {
@@ -92,8 +78,6 @@ export const generateSquaresArray = (grid) => {
       ) {
         step = 3
       }
-
-      console.log(step === 3)
 
       const availableOrders =
         step === 1
@@ -128,8 +112,6 @@ export const generateSquaresArray = (grid) => {
 
     array[randomIndex].score = 1 - Math.random() * (1 - highScoreLimit)
   }
-
-  console.log(array)
 
   return array
 }

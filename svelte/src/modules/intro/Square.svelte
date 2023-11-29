@@ -1,4 +1,6 @@
 <script>
+  import Person from '~/components/Person/Index.svelte'
+
   export let width
   export let row
   export let col
@@ -17,17 +19,12 @@
 </script>
 
 <div class="square" style={inlineStyle.join('')}>
-  <div class="square__background" />
-  <div class="square__data">
-    <p>col {col}</p>
-    <p>row {row}</p>
-    <p>score {score.toFixed(2)}</p>
-  </div>
-
-  <!-- <p>step {step}</p>
-  <p>order {order}</p>
-  <p>opacity {opacity.toFixed(2)}</p> -->
-  <!-- <p>score {score}</p> -->
+  <Person
+    color={'transparentBlue'}
+    secondLayer={true}
+    secondColor={'red'}
+    secondLayerOpacity={risk}
+  />
 </div>
 
 <style lang="scss">
@@ -35,7 +32,7 @@
     height: var(--width);
     width: var(--width);
     // background-color: var(--color);
-    background-color: plum;
+    // background-color: plum;
     font-family: monospace;
     position: relative;
     opacity: var(--opacity);
@@ -46,7 +43,7 @@
       grid-area: 1/-1;
     }
 
-    .square__background::after {
+    &::before {
       content: '';
       display: block;
       position: absolute;
@@ -56,7 +53,7 @@
       background-color: rgb(221, 255, 163);
       opacity: var(--risk);
       transition: opacity 100ms;
-      // opacity: 0;
+      opacity: 0;
     }
 
     .square__data {

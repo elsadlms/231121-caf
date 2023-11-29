@@ -36,25 +36,51 @@
     textData = LM_PAGE.database?.value?.texts?.['module-intro']
 
   // $: squareWidth = Math.min(100, availableWidth / colsNumber)
-  $: squareWidth = isMobile ? 60 : 100
+  $: squareWidth = isMobile ? 60 : 120
 
-  const animationSpan = 24
+  const animationSpan = 20
+  const squaresAlreadyPresent = 20
   $: squaresArray = generateSquaresArray(gridComposition)
-
-  console.log(squaresArray)
 
   const STEP_APPARITION = 'apparition'
   const STEP_SCORE = 'score'
+  const STEP_SCORE_FADE_IN = 'score-fade-in'
   const STEP_SORT = 'sort'
 
-  const STEPS = [STEP_APPARITION, STEP_SCORE, STEP_SORT]
+  const STEPS = [
+    {
+      name: STEP_APPARITION,
+      start: 0,
+      end: 0.15,
+    },
+    {
+      name: STEP_SCORE_FADE_IN,
+      start: 0.15,
+      end: 0.3,
+    },
+    {
+      name: STEP_SCORE,
+      start: 0.3,
+      end: 0.65,
+    },
+    {
+      name: STEP_SORT,
+      start: 0.65,
+      end: 1.01,
+    },
+  ]
 
   $: getProgression = (step) => {
-    const stepIndex = STEPS.indexOf(step)
+    const stepLength = step.end - step.start
 
-    const rawValue = progression * STEPS.length - stepIndex
+    let rawValue = 0
+    if (progression < step.start) rawValue = 0
+    else if (progression > step.end) rawValue = 1
+    else if (progression > step.start && progression < step.end) {
+      rawValue = (progression - step.start) * (1 / stepLength)
+    }
+
     const clampedValue = Math.max(0, Math.min(rawValue, 1))
-
     const mapped = clampedValue * (squaresArray.length + animationSpan)
     const index = Math.floor(mapped)
 
@@ -67,13 +93,21 @@
 
   $: getSquareOpacity = (square) => {
     const { order } = square
+    const shiftedOrder = order - squaresAlreadyPresent
+
+    const stepApparition = STEPS.find((el) => el.name === STEP_APPARITION)
 
     if (
-      order <= getProgression(STEP_APPARITION).index &&
-      order > getProgression(STEP_APPARITION).index - animationSpan
+      shiftedOrder <= getProgression(stepApparition).index &&
+      shiftedOrder > getProgression(stepApparition).index - animationSpan
     ) {
-      return (getProgression(STEP_APPARITION).mapped - order) / animationSpan
-    } else if (order <= getProgression(STEP_APPARITION).index - animationSpan) {
+      return (
+        (getProgression(stepApparition).mapped - shiftedOrder) / animationSpan
+      )
+    } else if (
+      shiftedOrder <=
+      getProgression(stepApparition).index - animationSpan
+    ) {
       return 1
     } else {
       return 0
@@ -83,12 +117,18 @@
   $: getSquareRisk = (square) => {
     const { score } = square
 
-    const scoreProgression = getProgression(STEP_SCORE).value
-    if (scoreProgression === 0) return 0
+    const stepScoreFadeIn = STEPS.find((el) => el.name === STEP_SCORE_FADE_IN)
+    const stepScore = STEPS.find((el) => el.name === STEP_SCORE)
+    const stepSort = STEPS.find((el) => el.name === STEP_SORT)
+
+    const scoreFadeInProgression = getProgression(stepScoreFadeIn).value
+    const scoreProgression = getProgression(stepScore).value
+
+    if (scoreFadeInProgression === 0) return 0
 
     if (scoreProgression === 1) {
       const sortingLimit = 0.7
-      const sortProgression = getProgression(STEP_SORT).value
+      const sortProgression = getProgression(stepSort).value
       if (sortProgression === 0) return 0
 
       if (score > sortingLimit)
@@ -99,7 +139,10 @@
         square.col * progression,
         square.row * progression,
       )
-      return score * scoreProgression + noiseValue * (1 - scoreProgression)
+      return (
+        score * scoreProgression +
+        noiseValue * (1 - scoreProgression) * scoreFadeInProgression
+      )
     }
   }
 
@@ -169,7 +212,7 @@
     display: grid;
     grid-template-columns: repeat(var(--cols-number), var(--squares-width));
     grid-template-rows: repeat(var(--rows-number), var(--squares-width));
-    grid-gap: 2px;
+    grid-gap: 12px;
   }
 
   .intro__grid {
@@ -196,7 +239,7 @@
     opacity: var(--title-opacity);
     margin: 0 auto;
     padding: 0 12px;
-    max-width: 95vw;
+    max-width: 90vw;
 
     @media (max-width: 700px) {
       font-size: 32px;
@@ -214,7 +257,7 @@
     margin: 0 auto;
     padding: 0 12px;
     font-size: 16px;
-    max-width: min(95vw, 300px);
+    max-width: min(90vw, 300px);
 
     @media (max-width: 900px) {
       font-size: 14px;
@@ -222,20 +265,20 @@
   }
 
   .intro__title {
-    grid-column: 8 / 12;
-    grid-row: 5 / 7;
+    grid-column: 7 / 11;
+    grid-row: 4 / 6;
   }
 
   .intro__publication {
     align-self: flex-end;
-    grid-column: 8 / 12;
-    grid-row: 4;
+    grid-column: 7 / 11;
+    grid-row: 3;
   }
 
   .intro__signature {
     align-self: flex-start;
-    grid-column: 8 / 12;
-    grid-row: 7;
+    grid-column: 7 / 11;
+    grid-row: 6;
   }
 
   .intro__container--mobile {
@@ -252,6 +295,11 @@
     .intro__signature {
       grid-column: 1 / -1;
       grid-row: 10;
+    }
+
+    .intro__text-container,
+    .intro__grid {
+      grid-gap: 10px;
     }
   }
 </style>
