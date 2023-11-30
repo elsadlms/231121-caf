@@ -44,7 +44,8 @@
     `--score-min: ${minValue * 100}%;`,
     `--score-max: ${maxValue * 100}%;`,
     `--score-fill-left: #48FFFF;`,
-    `--score-fill-right: ${getScoreColor(value * 10)};`,
+    // `--score-fill-right: ${getScoreColor(value)};`,
+    `--score-fill-right: #FF1B1B;`,
   ]
 </script>
 

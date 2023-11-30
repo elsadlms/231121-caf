@@ -69,6 +69,8 @@
   }
 
   const wrapperClasses = [`simulation__wrapper`]
+
+  $: console.log(currentConfig)
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -82,7 +84,7 @@
       </div>
       <div class="simulation__profile__score">
         <Score
-          value={currentScore.default}
+          value={currentScore.average}
           displayRange={displayScoreRange}
           minValue={currentScore.min}
           maxValue={currentScore.max}
