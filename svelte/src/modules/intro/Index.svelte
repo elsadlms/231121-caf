@@ -35,8 +35,7 @@
   if (typeof LM_PAGE !== 'undefined')
     textData = LM_PAGE.database?.value?.texts?.['module-intro']
 
-  // $: squareWidth = Math.min(100, availableWidth / colsNumber)
-  $: squareWidth = isMobile ? 60 : 110
+  $: squareWidth = isMobile ? 60 : 100
 
   const animationSpan = 20
   const squaresAlreadyPresent = 20
@@ -173,12 +172,8 @@
   <div class="intro__grid">
     {#each squaresArray as square}
       <Square
+        {isMobile}
         width={squareWidth}
-        col={square.col + 1}
-        row={square.row + 1}
-        score={square.score}
-        step={square.step}
-        order={square.order}
         opacity={getSquareOpacity(square)}
         risk={getSquareRisk(square)}
       />

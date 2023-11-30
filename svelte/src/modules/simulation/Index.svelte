@@ -13,6 +13,8 @@
   export let progression
   export let pageProgression
 
+  $: isMobile = width < 700
+
   let textData = texts.simulation
   if (typeof LM_PAGE !== 'undefined')
     textData = LM_PAGE.database?.value?.texts?.['module-simulation']
@@ -69,8 +71,6 @@
   }
 
   const wrapperClasses = [`simulation__wrapper`]
-
-  $: console.log(currentConfig)
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -80,7 +80,7 @@
     <div class="simulation__profile">
       <p class="simulation__profile__name">{@html textData.name}</p>
       <div class="simulation__profile__illus">
-        <Person nathalie={true} color={'lightBlue'} />
+        <Person {isMobile} nathalie={true} color={'lightBlue'} />
       </div>
       <div class="simulation__profile__score">
         <Score

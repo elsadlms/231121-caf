@@ -2,7 +2,8 @@
   import { getRandomFromArray } from '~/utils.js'
   import { faces } from './faces'
 
-  export let gender
+  export let isMobile
+  export let gender = undefined
   export let nathalie = false
   export let color = 'lightBlue'
   export let secondLayer = false
@@ -16,20 +17,10 @@
     return getRandomFromArray([...faces['women'], ...faces['men']])
   }
 
-  const colors = ['pink', 'red', 'green', 'blue', 'yellow', 'rebeccapurple']
-  let randomColor = getRandomFromArray(colors)
-
-  $: updateColor(gender)
-
-  const updateColor = (gender) => {
-    console.log(gender)
-    randomColor = getRandomFromArray(colors)
-  }
-
-
+  $: device = isMobile === true ? 'mobile' : 'desktop'
   $: selectedFace = getFace(nathalie, gender)
 
-  $: inlineStyle = [`--second-layer-opacity: ${secondLayerOpacity};`, `--test: ${randomColor};`]
+  $: inlineStyle = [`--second-layer-opacity: ${secondLayerOpacity};`]
 
 </script>
 
@@ -37,18 +28,17 @@
 <div class="person__container" style={inlineStyle.join(' ')}>
   <!-- <div class="person__svg">{@html svg}</div> -->
 
-  <img class="person__img person__img--first-layer" src={selectedFace[color]} />
+  <img class="person__img person__img--first-layer" src={selectedFace[device][color]} />
   {#if secondLayer === true}
     <img
       class="person__img person__img--second-layer"
-      src={selectedFace[secondColor]}
+      src={selectedFace[device][secondColor]}
     />
   {/if}
 </div>
 
 <style lang="scss">
   .person__container {
-    // background-color: var(--test);
     display: grid;
 
     > * {

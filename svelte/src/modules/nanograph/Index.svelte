@@ -61,7 +61,7 @@
     return { isHighlighted, gender }
   }
 
-  let squaresObject = Array.from({ length: 100 }, (_, i) => getRandomSquare(i))
+  let squaresObject = Array.from({ length: colsNumber * rowsNumber }, (_, i) => getRandomSquare(i))
 
   const updateSquaresObject = () => {
     squaresObject = squaresObject.map((_, i) => {
@@ -94,6 +94,7 @@
             }}
           >
             <Square
+              {isMobile}
               width={squareWidth}
               isHighlighted={square.isHighlighted}
               gender={square.gender}

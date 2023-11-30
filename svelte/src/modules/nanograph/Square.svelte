@@ -2,6 +2,7 @@
   import Person from '~/components/Person/Index.svelte'
 
   export let width
+  export let isMobile
   export let isHighlighted
   export let gender
   export let index
@@ -17,6 +18,7 @@
 
 <div class={containerClasses.join(' ')} style={inlineStyle.join(' ')}>
   <Person
+    {isMobile}
     {gender}
     color={'transparentBlue'}
     secondLayer={true}
