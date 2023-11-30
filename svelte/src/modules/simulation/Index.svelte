@@ -80,7 +80,7 @@
     <div class="simulation__profile">
       <p class="simulation__profile__name">{@html textData.name}</p>
       <div class="simulation__profile__illus">
-        <Person nathalie={true} color={'#D9FFFF'} />
+        <Person nathalie={true} color={'lightBlue'} />
       </div>
       <div class="simulation__profile__score">
         <Score
