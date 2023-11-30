@@ -36,7 +36,7 @@
     textData = LM_PAGE.database?.value?.texts?.['module-intro']
 
   // $: squareWidth = Math.min(100, availableWidth / colsNumber)
-  $: squareWidth = isMobile ? 60 : 120
+  $: squareWidth = isMobile ? 60 : 110
 
   const animationSpan = 20
   const squaresAlreadyPresent = 20
@@ -217,6 +217,7 @@
 
   .intro__grid {
     z-index: 2;
+    pointer-events: none;
   }
 
   .intro__text-container {
@@ -233,8 +234,10 @@
     );
     text-transform: uppercase;
     font-size: 42px;
-    font-weight: 600;
+    text-shadow: 0px 0px 7px rgba(72, 255, 255, 0.48);
+    font-weight: 500;
     line-height: 100%;
+    letter-spacing: 0.02em;
     transition: opacity 800ms;
     opacity: var(--title-opacity);
     margin: 0 auto;
@@ -252,15 +255,21 @@
 
   .intro__signature,
   .intro__publication {
+    font-family: var(--caf-ff-roboto-mono);
+    text-transform: uppercase;
+    color: var(--caf-c-blue);
     transition: opacity 800ms;
     opacity: var(--publi-opacity);
     margin: 0 auto;
     padding: 0 12px;
-    font-size: 16px;
-    max-width: min(90vw, 300px);
+    font-size: 14px;
+    line-height: 120%;
+    font-weight: 500;
+    max-width: min(90vw, 400px);
 
     @media (max-width: 900px) {
-      font-size: 14px;
+      font-size: 12px;
+      max-width: min(90vw, 300px);
     }
   }
 
@@ -300,6 +309,32 @@
     .intro__text-container,
     .intro__grid {
       grid-gap: 10px;
+    }
+  }
+
+  :global(.intro__grid > *),
+  .intro__text-container {
+    animation-name: fadeIn;
+    animation-duration: 1600ms;
+    animation-fill-mode: forwards;
+  }
+
+  // .intro__publication {
+  //   animation-delay: 0;
+  // }
+
+  // .intro__title {
+  //   animation-delay: 150ms;
+  // }
+
+  // .intro__signature {
+  //   animation-delay: 300ms;
+  // }
+
+  @keyframes fadeIn {
+    0% {
+      filter: blur(6px);
+      opacity: 0;
     }
   }
 </style>

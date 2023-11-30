@@ -16,9 +16,21 @@
     return getRandomFromArray([...faces['women'], ...faces['men']])
   }
 
+  const colors = ['pink', 'red', 'green', 'blue', 'yellow', 'rebeccapurple']
+  let randomColor = getRandomFromArray(colors)
+
+  $: updateColor(gender)
+
+  const updateColor = (gender) => {
+    console.log(gender)
+    randomColor = getRandomFromArray(colors)
+  }
+
+
   $: selectedFace = getFace(nathalie, gender)
 
-  $: inlineStyle = [`--second-layer-opacity: ${secondLayerOpacity};`]
+  $: inlineStyle = [`--second-layer-opacity: ${secondLayerOpacity};`, `--test: ${randomColor};`]
+
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
@@ -36,6 +48,7 @@
 
 <style lang="scss">
   .person__container {
+    // background-color: var(--test);
     display: grid;
 
     > * {
@@ -45,10 +58,13 @@
 
   .person__img {
     max-width: 100%;
-    height: 100%;
   }
 
   .person__img.person__img--second-layer {
+    // transition: opacity 200ms;
     opacity: var(--second-layer-opacity);
   }
 </style>
+
+
+

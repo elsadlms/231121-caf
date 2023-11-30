@@ -3,32 +3,32 @@
 ## intro
 
 _text-1: 
-<p>
+<p class="caf-text-card">
 Allocations familiales, aides au logement, RSA, allocation adulte handicapé... En France, près d'un foyer sur deux reçoit l'une de ces aides sociales.
 </p>
 
 _text-2: 
-<p>
+<p class="caf-text-card">
 Chaque bénéficiaire est susceptible d'être contrôlé à tout moment par sa caisse d'allocations familiales (CAF) pour vérifier s'il n'a pas commis une erreur ou une fraude dans ses déclarations.
 </p>
 
 _text-3:
-<p>
+<p class="caf-text-card">
 Un agent assermenté se rend alors à son domicile pour un "contrôle sur place". Pendant plusieurs heures, il peut consulter ses factures, éplucher ses relevés bancaires, vérifier sa situation familiale, voire même interroger ses voisins. 
 </p>
 
 _text-4:
-<p>
+<p class="caf-text-card">
 Incapable de contrôler tout le monde, les CAF ciblent en amont les dossiers les plus suspects.
 </p>
 
 _text-5:
-<p>
+<p class="caf-text-card">
 Pour cela, elles utilisent depuis 2010 un algorithme baptisé DMDE, qui attribue un "score de risque" à chaque foyer.
 </p>
 
 _text-6:
-<p>
+<p class="caf-text-card">
 Ce système est présenté comme neutre. Mais sous couvert de corrélations statistiques, l'algorithme cible en fait bien souvent les publics les plus fragiles.
 </p>
 
@@ -36,172 +36,204 @@ Ce système est présenté comme neutre. Mais sous couvert de corrélations stat
 ## plan
 
 _text-1:
-<p>
+<p class="caf-plain-text">
 Le système de contrôle des CAF est une boîte noire. On sait que la majorité des contrôles sont déclenchés grâce à l'algorithme DMDE, mais on ignore tout de son fonctionnement.
 </p>
 
 _text-2:
-<p>
+<p class="caf-plain-text">
 Les rares données publiques suggèrent que certaines catégories de la population sont visées en priorité.
 </p>
 
 _nanog-1:
-<p>
+<p class="caf-text-card">
 Elle montre par exemple que les familles monoparentales sont sur-représentées dans les contrôles.
 </p>
 
 _nanog-2:
-<p>
+<p class="caf-text-card">
 En 2015, par exemple, les familles monoparentales concentraient 36&nbsp;% des "contrôles sur place"...
 </p>
 
 _nanog-3:
-<p>
+<p class="caf-text-card">
 ...alors qu'elles ne représentent que 16&nbsp;% des foyers recevant des aides.
 </p>
 
 _nanog-4:
-<p>
+<p class="caf-text-card">
 De même, les plus précaires représentent plus de deux tiers de ces contrôles...
 </p>
 
 _nanog-5:
-<p>
+<p class="caf-text-card">
 ...mais moins de la moitié des foyers allocataires.
 </p>
 
 _text-3:
-<p>
+<p class="caf-text-card">
 L'algorithme "data mining" est-il biaisé, voire discriminant&nbsp;?
 </p>
 
 _text-4:
-<p>
+<p class="caf-text-card">
 Pour le vérifier, nous avons demandé à la CNAF, l'organisme qui coiffe toutes les CAF, de nous communiquer le détail de l'algorithme. Ce qu'elle a fait pour la première fois, en transmettant le code parallèlement au Monde, et à la Quadrature du Net.
 </p>
 
 _text-5:
-<p>
+<p class="caf-text-card">
 En analysant les 3 000 lignes de code de l'algorithme, en collaboration avec le collectif de journalistes <em>Lighthouse Reports</em>, nous avons pu décortiquer son fonctionnement.
 </p>
 
 _text-6:
-<p>
+<p class="caf-text-card">
 L'algorithme est relativement simple : il associe un coefficient de risque à une quarantaine de critères, comme l'âge ou le statut marital. Chaque foyer se voit ainsi attribuer un score de risque individuel compris entre 0 et 1.
 </p>
 
 _simulation-1-1:
+<p class="caf-text-card">
 Prenons un exemple : voici Nathalie, 51 ans, salariée.
+</p>
 
 _simulation-1-2:
+<p class="caf-text-card">
 Elle est mariée avec Philippe, 57 ans, salarié.
+</p>
 
 _simulation-1-3:
+<p class="caf-text-card">
 Ils gagnent chacun 1500 euros par mois.
+</p>
 
 _simulation-1-4:
+<p class="caf-text-card">
 Elle a deux enfants : un de 16 ans, un de 18 ans.
+</p>
 
 _simulation-1-5:
+<p class="caf-text-card">
 Elle n'a pas déménagé depuis 18 mois.
+</p>
 
 _simulation-1-6:
+<p class="caf-text-card">
 Elle a envoyé un mail à sa CAF il y a six mois.
+</p>
 
 _simulation-1-7:
+<p class="caf-text-card">
 Chacun de ces critères influence favorablement ou défavorablement le score du dossier de Nathalie.
+</p>
 
 _text-7:
-<p>
+<p class="caf-text-card">
 Plus son score se rapproche de 1, plus elle a de chances d'être contrôlée.
 </p>
 
 _text-8:
-<p>
+<p class="caf-text-card">
 Contrairement à ce que prétend la CNAF, l'algorithme est trop grossier pour réfléter "la complexification croissante des parcours de vie de ses bénéficiaires".
 </p>
 
 _text-9:
-<p>
+<p class="caf-text-card">
 Dans ce type d'algorithme, nommé "régression logistique", les critères contribuent au score de façon binaire : une caractéristique considérée comme "mauvaise", comme avoir un enfant à charge de plus de 19 ans, est néfaste dans tous les cas – quelle que soit sa combinaison avec une autre.
 </p>
 
 _simulation-2-1:
+<p class="caf-text-card">
 Autre problème : les effets de seuil induits par le fonctionnement simpliste de l'algorithme. Votre score est diminué si votre partenaire a moins de 60 ans, mais augmente brusquement le jour de son soixantième anniversaire.
+</p>
 
 _simulation-2-2:
+<p class="caf-text-card">
 Si le mari de Nathalie avait trois ans de plus, le score augmenterait soudainement. 
+</p>
 
 _simulation-2-3:
+<p class="caf-text-card">
 La CNAF ne nous a pas expliqué pourquoi elle avait choisi cette méthode, alors que des techniques alternatives permettent de lisser ces effets de seuil.
+</p>
 
 _text-10:
-<p>
+<p class="caf-text-card">
 Lorsqu'on l'interroge, la CNAF se défend de cibler les plus vulnérables. Pourtant, nous avons découvert qu'au moins 7 des 36 critères utilisés influencent défavorablement le score de risque pour les foyers à faibles ressources.
 </p>
 
 _text-11:
-<p>
+<p class="caf-text-card">
 Certaines visent directement les ressources de l'allocataire. Ces cinq critères sont tous défavorables si vous êtes plus pauvre ou avec une activité professionnelle irrégulière.
 </p>
 
 _text-12:
-<p>
+<p class="caf-text-card">
 D'autres sont indirectes parce qu'ils visent la multiplication des déclarations dans votre dossier, qui sont pourtant obligatoires si vous voulez toucher le RSA ou l'allocation adulte handicapée.
 </p>
 
 _text-13:
-<p>
+<p class="caf-text-card">
 Un autre critère vise plus directement le handicap : un malus important est affecté au score pour les personnes qui déclarent travailler et toucher l'AAH.
 </p>
 
 _simulation-3-1:
+<p class="caf-text-card">
 Reprenons le cas de Nathalie, salariée dans le privé.
+</p>
 
 _simulation-3-2:
+<p class="caf-text-card">
 Une personne avec les mêmes critères mais handicapée à plus de 80 % depuis plus de 3 ans et salariée dans le privé aura un score très largement supérieur. 
+</p>
 
 _simulation-3-3:
+<p class="caf-text-card">
 Si maintenant Nathalie se sépare de son mari et élève seule ses deux enfants...
+</p>
 
 _simulation-3-4:
+<p class="caf-text-card">
 Son revenu est divisé par deux, son loyer représente désormais 50 % de son revenu.
+</p>
 
 _simulation-3-5:
+<p class="caf-text-card">
 Automatiquement, sa séparation et ses enfants à charge la rendent suspecte aux yeux de l'algorithme.
+</p>
 
 _text-14:
-<p>
+<p class="caf-text-card">
 L'importance des critères de ressources dans le score sépare les allocataires en deux pôles.
 </p>
 
 _simulation-4-1:
+<p class="caf-text-card">
 Si Nathalie et Philippe ont tous deux des hauts revenus stables, et touchent les allocations familiales pour leurs deux enfants, leur score ne sera jamais très élevé et ils auront donc très peu de chances d'être contrôlés.
+</p>
 
 _text-15:
-<p>
+<p class="caf-text-card">
 On voit donc clairement que l'algorithme est biaisé. Mais est-il pour autant "discriminatoire" au sens de la loi ?
 </p>
 
 _text-16:
-<p>
+<p class="caf-text-card">
 WIP
 </p>
 
 _text-17:
-<p>
+<p class="caf-text-card">
 Lorsqu'on l'interroge, la CNAF conteste toute logique discriminatoire. Les plus précaires ne seraient pas surcontrôlés volontairement, mais parce que leur situation est généralement plus complexe, parce que les conditions d'attribution des minimas sociaux sont plus stricts.
 </p>
-<p>
+<p class="caf-text-card">
 La CNAF affirme ne se baser que sur des "corrélations statistiques" observées dans les 7000 contrôles aléatoires menés annuellement.
 </p>
-<p>
+<p class="caf-text-card">
 Mais elle reconnaît n'avoir jamais mené d'audit pour évaluer les risques de discrimination de son algorithme.
 </p>
-<p>
+<p class="caf-text-card">
 Dans ce contexte, l'absence de transparence sur le fonctionnement du système n'est pas neutre. "Cela arrange tout le monde de ne pas avoir de discussion publique sur ce qu'il y a dans ces outils et de les mettre dans une boîte noire. Cela les mets hors du visible et permet de ne pas les questionner", analyse Raphaële Xenidis, une universitaire qui s'intéresse aux discriminations algorithmiques.
 </p>
-<p>
+<p class="caf-text-card">
 Le développement de traitements algorithmiques dans les administrations n'est pas nécessairement mauvais en soi. Mais l'exemple de la CNAF, pionnière en la matière en France, montre que ces systèmes doivent pouvoir être contrôlés et débattus au même titre que n'importe quelle autre politique publique.
 </p>
 
@@ -227,8 +259,8 @@ _credits:
 
 ## module-intro
 _title: Age, situation familiale, revenus&nbsp;: comment la CAF note ses allocataires
-_publication: Publié le 5 décembre 2023
-_signature: Par Manon&nbsp;Romain, Adrien&nbsp;Sénécat, Elsa&nbsp;Delmas, Léa&nbsp;Girardot et Thomas&nbsp;Steffen
+_publication: Publié le 4 décembre 2023
+_signature: Par Manon&nbsp;Romain, Adrien&nbsp;Sénécat, Elsa&nbsp;Delmas, Léa&nbsp;Girardot et&nbsp;Thomas&nbsp;Steffen
 
 ## module-simulation
 _scoreLimit: Risque&nbsp;de&nbsp;contrôle
@@ -248,3 +280,4 @@ _enfantsMoins18ans: Deux enfants de 16 ans et 18 ans
 _pasDemenage18mois: Pas déménagé depuis 18 mois
 _mail6mois: Mail à la CAF il y a 6 mois
 _toucheAAH: Touche l’allocation adulte handicapé
+

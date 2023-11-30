@@ -1,5 +1,6 @@
 <script>
   import { fade } from 'svelte/transition'
+  import { cubicOut } from 'svelte/easing'
 
   import { pagesConfig } from './pagesConfig'
 
@@ -9,8 +10,8 @@
   export let height
   export let currentPage
 
-  let isAnimationPlaying = false
   let currentConfig = { ...pagesConfig[0] }
+  let lastConfig = {}
   $: updateConfig(currentPage)
 
   const updateConfig = (page) => {
@@ -18,14 +19,10 @@
     if (pagesConfig[page] === undefined) return
     if (pagesConfig[page] === currentConfig) return
 
+    lastConfig = currentConfig
     currentConfig = { ...pagesConfig[currentPage] }
-    isAnimationPlaying = true
 
-    setTimeout(() => {
-      isAnimationPlaying = false
-    }, 1000)
-
-    console.log(currentConfig)
+    if (currentConfig.highlighted !== lastConfig.highlighted) updateSquaresObject()
   }
 
   $: isMobile = width < 700
@@ -42,9 +39,39 @@
     availableHeight / rowsNumber,
   )
 
+  const flip = (node, { duration, delay }) => {
+    return {
+      duration,
+      delay,
+      css: (t) => {
+        const eased = cubicOut(t)
+
+        return `
+          transform: rotateX(${180 - 180 * eased}deg);
+					opacity: ${eased};
+          `
+      },
+    }
+  }
+
+  const getRandomSquare = (i) => {
+    const isHighlighted = i < currentConfig.highlighted
+    const genderProba = isHighlighted ? currentConfig.womenProportion : 0.5
+    const gender = Math.random() < genderProba ? 'woman' : 'man'
+    return { isHighlighted, gender }
+  }
+
+  let squaresObject = Array.from({ length: 100 }, (_, i) => getRandomSquare(i))
+
+  const updateSquaresObject = () => {
+    squaresObject = squaresObject.map((_, i) => {
+      return getRandomSquare(i)
+    })
+  }
+
   $: containerClasses = [
     'nanog__container',
-    isAnimationPlaying ? 'nanog__container--animated' : '',
+    `nanog__container--page-${currentPage}`,
   ]
 
   $: inlineStyle = [
@@ -56,14 +83,22 @@
 
 <div class={containerClasses.join(' ')} style={inlineStyle.join(' ')}>
   <div class="nanog__grid">
-    {#each Array.from({ length: 100 }) as _, i}
-      {@const isHighlighted = i < currentConfig.highlighted}
-      {@const genderLimit = isHighlighted ? currentConfig.womenProportion : 0.5}
-      {@const gender = Math.random() < genderLimit ? 'woman' : 'man'}
+    {#each squaresObject as square, i}
       <div class="nanog__grid__cell">
-        {#key pagesConfig}
-          <div transition:fade={200}>
-            <Square width={squareWidth} {isHighlighted} {gender} />
+        {#key currentConfig.highlighted}
+          <div
+            out:fade={{ duration: 600, delay: i * 6 }}
+            in:flip={{
+              duration: 400,
+              delay: i * 10 + 100,
+            }}
+          >
+            <Square
+              width={squareWidth}
+              isHighlighted={square.isHighlighted}
+              gender={square.gender}
+              index={i}
+            />
           </div>
         {/key}
       </div>
@@ -74,17 +109,35 @@
 <style lang="scss">
   .nanog__container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: grid;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
+    transition: opacity 200ms;
+  }
+
+  .nanog__container--page-0 {
+    opacity: 0.2;
+  }
+
+  :global(.nanog__container--page-0 .person__img.person__img--second-layer) {
+    opacity: 0 !important;
   }
 
   .nanog__grid {
     display: grid;
     grid-template-columns: repeat(var(--cols-number), var(--squares-width));
     grid-template-rows: repeat(var(--rows-number), var(--squares-width));
-    grid-gap: 2px;
+    grid-gap: 6px;
+
+    @media (max-width: 800px) {
+      grid-gap: 4px;
+    }
+
+    @media (max-width: 500px) {
+      grid-gap: 2px;
+    }
   }
 
   .nanog__grid__cell {
@@ -92,12 +145,6 @@
 
     > * {
       grid-area: 1/-1;
-    }
-  }
-
-  .nanog__container--animated {
-    .nanog__grid__cell {
-      // animation: fadeInOut 1000ms;
     }
   }
 

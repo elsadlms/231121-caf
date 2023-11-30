@@ -6,7 +6,7 @@
   export let pContext
   export let currentPage = 0
 
-  let pagesNumber = 14
+  let pagesNumber = 5
 
   $: {
     currentPage = Math.floor(context.progression * pagesNumber)
