@@ -64,7 +64,7 @@
   }
 
   const getAge = (progression) => {
-    if (currentConfig.id === 2) return currentConfig.baseAge
+    if (currentConfig.id === 0) return currentConfig.baseAge
 
     const additionalAge = Math.floor(progression * 3)
     return currentConfig.baseAge + additionalAge
@@ -78,9 +78,17 @@
 <div class={wrapperClasses.join(' ')}>
   <div class="simulation__container">
     <div class="simulation__profile">
-      <p class="simulation__profile__name">{@html textData.name}</p>
+      {#if currentConfig.name !== 'couple'}
+        <p class="simulation__profile__name">
+          {@html currentConfig.name}
+        </p>
+      {/if}
       <div class="simulation__profile__illus">
-        <Person {isMobile} nathalie={true} color={'lightBlue'} />
+        <Person
+          {isMobile}
+          name={currentConfig.name.toLowerCase()}
+          color={'lightBlue'}
+        />
       </div>
       <div class="simulation__profile__score">
         <Score
@@ -94,30 +102,40 @@
 
     <div class="simulation__parameters">
       {#each Object.entries(currentConfig.params) as [key, value]}
-        {@const hasBeenUpdated =
-          currentConfig.id !== 0 && updatedParams[key] !== undefined}
-        {@const isHidden = value === ''}
-        {@const elementClasses = [
-          `simulation__parameter`,
-          hasBeenUpdated ? 'simulation__parameter--updated' : '',
-          isHidden ? 'simulation__parameter--hidden' : '',
-        ]}
-        {@const lastValue = lastConfig.hasOwnProperty('params') ? lastConfig.params[key] : ''}
-        {@const content =
-          lastValue !== '' && value === '' ? lastValue : value}
-        <p class={elementClasses.join(' ')}>
-          <span class="simulation__parameter__value">{content}</span>
-        </p>
+        {#if currentConfig.part === 2 && key === 'conjoint'}
+          {@const hasBeenUpdated = conjointAge !== 57}
+          {@const elementClasses = [
+            `simulation__parameter`,
+            hasBeenUpdated ? 'simulation__parameter--updated' : '',
+          ]}
+          <p class={elementClasses.join(' ')}>
+            <span class="simulation__parameter__value">
+              {textData.conjoint1}
+              {conjointAge}
+              {textData.conjoint2}
+            </span>
+          </p>
+        {:else}
+          {@const hasBeenUpdated =
+            currentConfig.id !== 0 && updatedParams[key] !== undefined}
+          {@const isHidden = value === ''}
+          {@const elementClasses = [
+            `simulation__parameter`,
+            hasBeenUpdated ? 'simulation__parameter--updated' : '',
+            isHidden ? 'simulation__parameter--hidden' : '',
+          ]}
+          {@const lastValue = lastConfig.hasOwnProperty('params')
+            ? lastConfig.params[key]
+            : ''}
+          {@const content =
+            lastValue !== '' && value === '' ? lastValue : value}
+          <p class={elementClasses.join(' ')}>
+            {#if content !== undefined}
+              <span class="simulation__parameter__value">{@html content}</span>
+            {/if}
+          </p>
+        {/if}
       {/each}
-      {#if currentConfig.part === 2}
-        <p class="simulation__parameter simulation__parameter--updated">
-          <span class="simulation__parameter__value">
-            {textData.conjoint1}
-            {conjointAge}
-            {textData.conjoint2}
-          </span>
-        </p>
-      {/if}
     </div>
   </div>
 </div>
@@ -159,6 +177,10 @@
     width: 130px;
     filter: drop-shadow(0px 0px 54px #48ffff);
     padding-bottom: 48px;
+
+    @media (max-width: 500px) {
+      width: 100px;
+    }
   }
 
   .simulation__parameters {
@@ -177,6 +199,7 @@
       opacity 800ms,
       color 300ms;
     color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
 
     &.simulation__parameter--updated {
       color: var(--caf-c-blue);
@@ -187,7 +210,19 @@
     }
 
     + .simulation__parameter {
-      padding-top: 16px;
+      padding-top: 1em;
+    }
+
+    @media (max-width: 800px) {
+      font-size: 14px;
+
+      + .simulation__parameter {
+        padding-top: 0.66em;
+      }
+    }
+
+    @media (max-width: 400px) {
+      font-size: 12px;
     }
   }
 </style>

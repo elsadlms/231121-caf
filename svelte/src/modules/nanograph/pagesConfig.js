@@ -16,12 +16,12 @@ export const pagesConfig = [
   },
   {
     id: 3,
-    highlighted: 68,
+    highlighted: 71,
     womenProportion: 0.5,
   },
   {
     id: 4,
-    highlighted: 48,
+    highlighted: 49,
     womenProportion: 0.5,
   },
 ]

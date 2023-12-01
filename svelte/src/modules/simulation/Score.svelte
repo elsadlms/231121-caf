@@ -8,9 +8,6 @@
   export let minValue
   export let maxValue
 
-  console.log(minValue)
-  console.log(maxValue)
-
   const riskLimit = 0.5
 
   const colorScale = [
@@ -31,8 +28,6 @@
   if (typeof LM_PAGE !== 'undefined')
     textData = LM_PAGE.database?.value?.texts?.['module-simulation']
 
-  // $: console.log(value * 10)
-
   $: containerClasses = [
     'score__container',
     displayRange ? 'score__container--range' : '',
@@ -42,7 +37,9 @@
     `--limit-offset: ${riskLimit * 100}%;`,
     `--score-value: ${value * 100}%;`,
     `--score-min: ${minValue * 100}%;`,
+    `--score-min-value: '${minValue.toFixed(2)}';`,
     `--score-max: ${maxValue * 100}%;`,
+    `--score-max-value: '${maxValue.toFixed(2)}';`,
     `--score-fill-left: #48FFFF;`,
     // `--score-fill-right: ${getScoreColor(value)};`,
     `--score-fill-right: #FF1B1B;`,
@@ -53,7 +50,14 @@
   <div class="score__bar">
     <div class="score__bar__shadow"></div>
     <div class="score__bar__fill"></div>
-    <div class="score__bar__range"></div>
+    <div class="score__bar__range">
+      <div
+        class="score__bar__range__limit score__bar__range__limit--before"
+      ></div>
+      <div
+        class="score__bar__range__limit score__bar__range__limit--after"
+      ></div>
+    </div>
     <div class="score__bar__limit"></div>
   </div>
   <!-- <p>{value}</p> -->
@@ -84,7 +88,7 @@
       display: block;
       line-height: 1em;
       font-size: 20px;
-      top: -50%;
+      top: -8px;
       font-weight: 600;
       font-family: var(--caf-ff-roboto-mono);
     }
@@ -117,9 +121,9 @@
 
   .score__bar__limit {
     border-right: 1px dashed #fff;
-    height: 30px;
+    height: 33px;
     position: absolute;
-    top: -100%;
+    top: -10px;
     left: var(--limit-offset);
     display: grid;
     justify-content: center;
@@ -127,21 +131,40 @@
   }
 
   .score__bar__range {
-    border-radius: 10px;
-    background: red;
-    width: 2px;
-    left: var(--score-min);
-    transition:
-      width 600ms,
-      background-color 600ms;
+    width: var(--score-max);
+    background-color: var(--caf-c-blue);
 
-    &::after {
-      display: block;
-      content: '';
+    .score__bar__range__limit {
       position: absolute;
-      left: var(--score-max);
-      height: 10px;
-      border-right: 2px solid red;
+      top: -10px;
+      height: 33px;
+      border-left: 1px solid #fff;
+      font-family: var(--caf-ff-roboto-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+
+      &.score__bar__range__limit--before {
+        left: var(--score-min);
+        padding-left: 0px;
+
+        &::after {
+          content: var(--score-min-value);
+          position: relative;
+          top: -20px;
+        }
+      }
+
+      &.score__bar__range__limit--after {
+        left: var(--score-max);
+
+        &::before {
+          content: var(--score-max-value);
+          padding-right: 0px;
+          position: relative;
+          left: -100%;
+          top: -20px;
+        }
+      }
     }
   }
 

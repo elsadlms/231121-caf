@@ -11,7 +11,6 @@ const STATICS = {
   MOIS_ACTIVITE_24: textData.moisActivite24,
   SITUATION_PERSO_MARIEE: textData.situationPersoMariee,
   CONJOINT_MOINS_60_ANS: textData.conjointMoins60ans,
-  CONJOINT_PLUS_60_ANS: textData.conjointPlus60ans,
   REVENUS_1484: textData.revenus1484,
   REVENUS_942: textData.revenus942,
   REVENUS_577: textData.revenus577,
@@ -20,7 +19,6 @@ const STATICS = {
   PAS_CHANGEMENT_ADRESSE: textData.pasChangementAdresse,
   PAS_CHANGEMENT_LOYER: textData.pasChangementLoyer,
   MAIL_4_MOIS: textData.mail4mois,
-
   ENTRE_35_ET_60_ANS: textData.entre35et60ans,
   ENFANT_MOINS_12_ANS: textData.enfantMoins12ans,
   VALIDES: textData.valides,
@@ -31,15 +29,7 @@ const STATICS = {
   INSCRIT_PLUS_4_ANS: textData.inscritPlus4ans,
   TOUCHE_AAH: textData.toucheAAH,
   SITUATION_PERSO_DIVORCEE: textData.situationPersoDivorcee,
-
-  // FEMME: textData.femme,
-  // AGE: textData.age,
-  // SITUATION_PRO_SALARIEE: textData.situationProSalariee,
-  // SITUATION_PERSO_MARIEE: textData.situationPersoMariee,
-  // SITUATION_PERSO_DIVORCEE: textData.situationPersoDivorcee,
-  // CONJOINT_AGE: textData.conjointAge,
-  // PAS_DEMENAGE_18_MOIS: textData.pasDemenage18mois,
-  // TOUCHE_AAH: textData.toucheAAH,
+  JAMAIS_CONTROLE: textData.jamaisControle,
 }
 
 // présentation de l'algo
@@ -259,16 +249,9 @@ const part1 = [
       TXEFF_P: '0ALETTXEFF 0A35',
     },
   },
-]
-
-// effets de seuil
-// animer l'âge au scroll -> passage de cat 1 à cat 2
-const part2 = [
-  // conjoint de moins de 60 ans
   {
-    id: 0,
-    part: 2,
-    baseAge: 57,
+    id: 6,
+    part: 1,
     name: 'Nathalie',
     params: {
       valide: STATICS.VALIDE,
@@ -305,18 +288,16 @@ const part2 = [
       TXEFF_P: '0ALETTXEFF 0A35',
     },
   },
-  // conjoint de plus de 60 ans
   {
-    id: 1,
-    part: 2,
-    baseAge: 60,
+    id: 7,
+    part: 1,
     name: 'Nathalie',
     params: {
       valide: STATICS.VALIDE,
       age: STATICS.PLUS_34_ANS,
       situation_pro: STATICS.MOIS_ACTIVITE_24,
       situation_perso: STATICS.SITUATION_PERSO_MARIEE,
-      conjoint: STATICS.CONJOINT_PLUS_60_ANS,
+      conjoint: STATICS.CONJOINT_MOINS_60_ANS,
       revenus: STATICS.REVENUS_942,
       enfant: STATICS.ENFANT_MOINS_18_ANS,
       inscription_caf: STATICS.INSCRITE_PLUS_4_ANS,
@@ -327,7 +308,7 @@ const part2 = [
     scoreData: {
       ABANEU: 'AUCUN',
       SEQACR: 'ACT_X__X_',
-      AGECON_quant: '60 ET PLUS',
+      AGECON_quant: 'MISSAUT',
       AGERESP_quant: 'MISSAUT',
       COMPANTRIM: 'STABLE',
       FGRESTRI18_quant: '0 < x <1',
@@ -346,17 +327,105 @@ const part2 = [
       TXEFF_P: '0ALETTXEFF 0A35',
     },
   },
+]
+
+// effets de seuil
+// animer l'âge au scroll -> passage de cat 1 à cat 2
+const part2 = [
+  // conjoint de moins de 60 ans
   {
-    id: 2,
+    id: 0,
     part: 2,
-    baseAge: 63,
+    baseAge: 57,
     name: 'Nathalie',
     params: {
       valide: STATICS.VALIDE,
       age: STATICS.PLUS_34_ANS,
       situation_pro: STATICS.MOIS_ACTIVITE_24,
       situation_perso: STATICS.SITUATION_PERSO_MARIEE,
-      conjoint: STATICS.CONJOINT_PLUS_60_ANS,
+      conjoint: '',
+      revenus: STATICS.REVENUS_942,
+      enfant: STATICS.ENFANT_MOINS_18_ANS,
+      inscription_caf: STATICS.INSCRITE_PLUS_4_ANS,
+      adresse: STATICS.PAS_CHANGEMENT_ADRESSE,
+      loyer: STATICS.PAS_CHANGEMENT_LOYER,
+      mail: STATICS.MAIL_4_MOIS,
+    },
+    scoreData: {
+      ABANEU: 'AUCUN',
+      SEQACR: 'ACT_X__X_',
+      AGECON_quant: 'MISSAUT',
+      AGERESP_quant: 'MISSAUT',
+      COMPANTRIM: 'STABLE',
+      FGRESTRI18_quant: '0 < x <1',
+      SEQFAM: '23XXX',
+      MOINSCDO_quant: '49 ET PLUS',
+      OPT_MACT12: '03:14.5-HIGH',
+      OPT_MOIPIE_MAIL: '03:4.5-HIGH',
+      NADRESS18_quant: '0 < x <1',
+      NBM_ODMS_quant: '0 < x <1',
+      OPT_NMODLOY18: '01:LOW -0.5, MISSIN',
+      TOPENF1218_P: '1',
+      TYPAAH: '0',
+      TUT_P: '0',
+      RUC_RED_quant: '942 < x <1483.33',
+      STATUETU: '0',
+      TXEFF_P: '0ALETTXEFF 0A35',
+    },
+  },
+  // conjoint de plus de 60 ans
+  {
+    id: 1,
+    part: 2,
+    baseAge: 57,
+    name: 'Nathalie',
+    params: {
+      valide: STATICS.VALIDE,
+      age: STATICS.PLUS_34_ANS,
+      situation_pro: STATICS.MOIS_ACTIVITE_24,
+      situation_perso: STATICS.SITUATION_PERSO_MARIEE,
+      conjoint: '',
+      revenus: STATICS.REVENUS_942,
+      enfant: STATICS.ENFANT_MOINS_18_ANS,
+      inscription_caf: STATICS.INSCRITE_PLUS_4_ANS,
+      adresse: STATICS.PAS_CHANGEMENT_ADRESSE,
+      loyer: STATICS.PAS_CHANGEMENT_LOYER,
+      mail: STATICS.MAIL_4_MOIS,
+    },
+    scoreData: {
+      ABANEU: 'AUCUN',
+      SEQACR: 'ACT_X__X_',
+      AGECON_quant: 'MISSAUT',
+      AGERESP_quant: 'MISSAUT',
+      COMPANTRIM: 'STABLE',
+      FGRESTRI18_quant: '0 < x <1',
+      SEQFAM: '23XXX',
+      MOINSCDO_quant: '49 ET PLUS',
+      OPT_MACT12: '03:14.5-HIGH',
+      OPT_MOIPIE_MAIL: '03:4.5-HIGH',
+      NADRESS18_quant: '0 < x <1',
+      NBM_ODMS_quant: '0 < x <1',
+      OPT_NMODLOY18: '01:LOW -0.5, MISSIN',
+      TOPENF1218_P: '1',
+      TYPAAH: '0',
+      TUT_P: '0',
+      RUC_RED_quant: '942 < x <1483.33',
+      STATUETU: '0',
+      TXEFF_P: '0ALETTXEFF 0A35',
+    },
+  },
+  // conjoint de plus de 60 ans
+  {
+    id: 2,
+    part: 2,
+    baseAge: 60,
+    name: 'Nathalie',
+    params: {
+      valide: STATICS.VALIDE,
+      age: STATICS.PLUS_34_ANS,
+      situation_pro: STATICS.MOIS_ACTIVITE_24,
+      situation_perso: STATICS.SITUATION_PERSO_MARIEE,
+      conjoint: '',
       revenus: STATICS.REVENUS_942,
       enfant: STATICS.ENFANT_MOINS_18_ANS,
       inscription_caf: STATICS.INSCRITE_PLUS_4_ANS,
@@ -394,7 +463,7 @@ const part3 = [
   {
     id: 0,
     part: 4,
-    name: '',
+    name: 'couple',
     params: {
       age: STATICS.ENTRE_35_ET_60_ANS,
       enfants: STATICS.ENFANT_MOINS_12_ANS,
@@ -402,6 +471,7 @@ const part3 = [
       revenus: STATICS.REVENUS_STABLES,
       situation_pro: STATICS.ACTIVITE_SALARIEE,
       minima: STATICS.PAS_MINIMA_SOCIAUX,
+      jamaisControle: STATICS.JAMAIS_CONTROLE,
     },
     scoreData: {
       ABANEU: 'AUCUN',
@@ -415,6 +485,7 @@ const part3 = [
       NBM_ODMS_quant: '0 < x <1',
       OPT_NMODLOY18: '01:LOW -0.5, MISSIN',
       OPT_NBPIE_DSIT18: '01:LOW -0.5, MISSIN',
+      FGRESTRI18_quant: '0 < x <1',
       TYPAAH: '0',
       TOPEN19: '0',
       TOPENF1218_P: '0',
@@ -422,12 +493,13 @@ const part3 = [
       RUC_RED_quant: '1483.33 < x <=19745',
       STATUETU: '0',
       TXEFF_P: '0ALETTXEFF 0A35',
+      MOICONTVER_quant: 'MISSAUT',
     },
   },
 ]
 
 // discriminations aah
-const part3 = [
+const part4 = [
   {
     id: 0,
     part: 3,
@@ -509,10 +581,10 @@ const part3 = [
   },
 ]
 
-const part4 = [
+const part5 = [
   {
     id: 0,
-    part: 4,
+    part: 5,
     name: 'Nathalie',
     params: {
       valide: STATICS.VALIDE,
@@ -551,7 +623,7 @@ const part4 = [
   },
   {
     id: 1,
-    part: 4,
+    part: 5,
     name: 'Nathalie',
     params: {
       valide: STATICS.VALIDE,
@@ -590,6 +662,7 @@ const part4 = [
   },
 ]
 
-const config = [...part1, ...part2, ...part3, ...part4]
+// const config = [...part1, ...part2, ...part3, ...part4, ...part5]
+const config = [...part3]
 
-export { part1, part2, part3, part4, config }
+export { part1, part2, part3, part4, part5, config }

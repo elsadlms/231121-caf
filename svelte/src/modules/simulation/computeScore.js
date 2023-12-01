@@ -53,7 +53,6 @@ function set_compute_score(){
           const v = variable.Variable;
           if (args[v]){
               const coeff = coeff_vars.get(v).get(args[v]);
-              console.log(v, coeff/25.8*100)
               if (coeff === undefined)
                   return [v, args[v], coeff_vars.get(v)]
               min_extent += coeff;

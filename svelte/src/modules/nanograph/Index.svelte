@@ -71,7 +71,7 @@
 
   $: containerClasses = [
     'nanog__container',
-    `nanog__container--page-${currentPage}`,
+    `nanog__container--${currentPage > 0 ? 'active' : 'inactive'}`,
   ]
 
   $: inlineStyle = [
@@ -87,10 +87,10 @@
       <div class="nanog__grid__cell">
         {#key currentConfig.highlighted}
           <div
-            out:fade={{ duration: 600, delay: i * 6 }}
+            out:fade={{ duration: 600, delay: i * 2 }}
             in:flip={{
               duration: 400,
-              delay: i * 10 + 100,
+              delay: i * 6 + 100,
             }}
           >
             <Square
@@ -115,14 +115,14 @@
     align-items: center;
     justify-content: center;
     pointer-events: none;
-    transition: opacity 200ms;
+    transition: opacity 600ms;
   }
 
-  .nanog__container--page-0 {
-    opacity: 0.2;
+  .nanog__container--inactive {
+    opacity: 0.6;
   }
 
-  :global(.nanog__container--page-0 .person__img.person__img--second-layer) {
+  :global(.nanog__container--inactive .person__img.person__img--second-layer) {
     opacity: 0 !important;
   }
 

@@ -29,9 +29,10 @@ body {
   color: var(--caf-c-text);
   background-color: rgba(0, 0, 0, 0.30);
   box-shadow: 0px 0px 26px 0px rgba(65, 189, 238, 0.2), 0 1px 3px 0px rgba(65, 189, 238, 0.03);
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
+  //backdrop-filter: blur(13px);
+  //-webkit-backdrop-filter: blur(13px);
   pointer-events: initial;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
@@ -49,8 +50,13 @@ body {
   font-size: 26px;
   text-align: left;
   line-height: 1.4;
-  width: 640px;
-  max-width: 84%;
+  width: 84%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.caf-plain-text p + p {
+  margin-top: 0.66em;
 }
 
 @media (max-width: 600px) {
@@ -125,12 +131,6 @@ body {
   width: 100%;
 }
 
-.caf-scrolling-text__text {
-  max-width: 560px;
-  font-family: var(--lmui-ff-marr-sans, var(--ff-marr-sans));
-  line-height: 140%;
-}
-
 .caf-list-container,
 .caf-capture-container {
   height: 100vh;
@@ -182,7 +182,7 @@ body {
   padding: 24px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .caf-list {
     font-size: 12px;
   }
@@ -202,8 +202,55 @@ body {
   opacity: 0;
 }
 
+.caf-credits {
+  font-family: var(--lmui-ff-marr-sans, var(--ff-marr-sans));
+  line-height: 140%;
+}
 
+.caf-credits p + p {
+  margin-top: 0.33em;
+}
 
+.caf-credits strong {
+  font-weight: 600;
+}
+
+.caf-methodo {
+  font-family: var(--lmui-ff-marr-sans, var(--ff-marr-sans));
+  border: 1px solid #fff;
+  padding: 24px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .caf-methodo {
+    padding: 16px;
+  }
+}
+
+.caf-methodo p + p {
+  margin-top: 0.66em;
+}
+
+@media (min-width: 1100px) {
+  .caf-scrolling-text.caf-scrolling-text--simulation {
+    position: relative;
+    width: 50%;
+    left: 2%;
+  }
+
+  .caf-scrolling-text.caf-scrolling-text--simulation .caf-text-card {
+    max-width: 540px;
+  }
+
+  [data-id="module-simulation"] .lm-svelte-module {
+    position: absolute;
+    width: 50%;
+    right: 5%;
+  }
+}
 
 // SLOTS
 
@@ -247,6 +294,15 @@ _content:
   </div>
 </div>
 
+## block-simulation-text
+_content: 
+<div class="caf-scrolling-text caf-scrolling-text--simulation lm-flex-center">
+  <div class="caf-scrolling-text__text">
+    {{TEXT}}
+  </div>
+</div>
+
+
 ## block-simple-text
 _content: 
 <div class="caf-scrolling-text lm-flex-center">
@@ -268,58 +324,64 @@ _thresholdOffset: 50%
 _forceStickBlocks: before
 _pages:
 
-// // intro
-// ../../page-empty,
-// ../../page-title,
-// ../../page-intro-text-1,
-// ../../page-intro-text-2,
-// ../../page-intro-text-3,
-// ../../page-intro-text-4,
-// ../../page-intro-text-5,
-// ../../page-intro-text-6,
-// 
-// // déroulé
-// ../../page-text-1,
-// ../../page-text-2,
-// ../../page-nanog-1,
-// ../../page-nanog-2,
-// ../../page-nanog-3,
-// ../../page-nanog-4,
-// ../../page-nanog-5,
-// ../../page-text-3,
-// ../../page-text-4,
-// ../../page-text-5,
-// ../../page-text-6,
-// ../../page-simulation-1-1,
-// ../../page-simulation-1-2,
-// ../../page-simulation-1-3,
-// ../../page-simulation-1-4,
-// ../../page-simulation-1-5,
-// ../../page-simulation-1-6,
-// ../../page-simulation-1-7,
-// ../../page-text-7,
-// ../../page-text-8,
-// ../../page-text-9,
-// ../../page-simulation-2-1,
-// ../../page-simulation-2-2,
+// intro
+../../page-empty,
+../../page-title,
+../../page-intro-text-1,
+../../page-intro-text-2,
+../../page-intro-text-3,
+../../page-intro-text-4,
+../../page-intro-text-5,
+../../page-intro-text-6,
+
+// déroulé
+../../page-text-1,
+../../page-text-2,
+../../page-nanog-1,
+../../page-nanog-2,
+../../page-nanog-3,
+../../page-nanog-4,
+../../page-nanog-5,
+../../page-text-3,
+../../page-text-4,
+../../page-text-5,
+../../page-text-6,
+../../page-simulation-1-1,
+../../page-simulation-1-2,
+../../page-simulation-1-3,
+../../page-simulation-1-4,
+../../page-simulation-1-5,
+../../page-simulation-1-6,
+../../page-simulation-1-7,
+../../page-simulation-1-8,
+../../page-text-8,
+../../page-text-9,
+../../page-text-9-1,
+../../page-text-9-2,
+../../page-simulation-2-1,
+../../page-simulation-2-2,
 ../../page-simulation-2-3,
+../../page-text-9-3,
 ../../page-text-10,
 ../../page-text-11,
 ../../page-text-12,
 ../../page-text-13,
 ../../page-simulation-3-1,
-../../page-simulation-3-2,
-../../page-simulation-3-3,
-../../page-simulation-3-4,
-../../page-simulation-3-5,
-../../page-text-14,
+../../page-text-13-1,
 ../../page-simulation-4-1,
+../../page-simulation-4-2,
+../../page-text-13-2,
+../../page-text-14,
+../../page-text-14-1,
 ../../page-text-15,
 ../../page-text-16,
+../../page-simulation-5-1,
+../../page-simulation-5-2,
 ../../page-text-17,
 
 // end
 ../../page-credits,
+../../page-methodo,
 
 >>> split ,
 >>> map trim
@@ -514,6 +576,26 @@ _blocks:
 >>> map trim
 >>> map toRef
 
+## page-simulation-1-7
+_id: page-simulation-1-7
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-7,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-1-8
+_id: page-simulation-1-8
+_blocks: 
+../../module-simulation,
+../../text-simulation-1-8,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
 ## page-simulation-2-1
 _id: page-simulation-2-1
 _blocks: 
@@ -538,8 +620,7 @@ _blocks:
 _id: page-simulation-2-3
 _blocks: 
 ../../module-simulation,
-../../text-simulation-2-3,
-../../empty-scroll-10vh,
+../../empty-scroll-100vh,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -604,6 +685,36 @@ _blocks:
 >>> map trim
 >>> map toRef
 
+## page-simulation-4-2
+_id: page-simulation-4-2
+_blocks: 
+../../module-simulation,
+../../text-simulation-4-2,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-5-1
+_id: page-simulation-5-1
+_blocks: 
+../../module-simulation,
+../../text-simulation-5-1,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-simulation-5-2
+_id: page-simulation-5-2
+_blocks: 
+../../module-simulation,
+../../text-simulation-5-2,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
 ## page-text-1
 _id: page-text-1
 _blocks: 
@@ -658,6 +769,15 @@ _blocks:
 >>> map trim
 >>> map toRef
 
+## page-text-6-1
+_id: page-text-6-1
+_blocks: 
+../../block-text-6-1,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
 ## page-text-7
 _id: page-text-7
 _blocks: 
@@ -680,6 +800,33 @@ _blocks:
 _id: page-text-9
 _blocks: 
 ../../block-text-9,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-text-9-1
+_id: page-text-9-1
+_blocks: 
+../../block-text-9-1,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-text-9-2
+_id: page-text-9-2
+_blocks: 
+../../block-text-9-2,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-text-9-3
+_id: page-text-9-3
+_blocks: 
+../../block-text-9-3,
 ../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
@@ -724,10 +871,37 @@ _blocks:
 >>> map trim
 >>> map toRef
 
+## page-text-13-1
+_id: page-text-13-1
+_blocks: 
+../../block-text-13-1,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-text-13-2
+_id: page-text-13-2
+_blocks: 
+../../block-text-13-2,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
 ## page-text-14
 _id: page-text-14
 _blocks: 
 ../../block-text-14,
+../../empty-scroll-10vh,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-text-14-1
+_id: page-text-14-1
+_blocks: 
+../../block-text-14-1,
 ../../empty-scroll-10vh,
 >>> split ,
 >>> map trim
@@ -881,6 +1055,14 @@ _blocks:
 _id: page-credits
 _blocks: 
 ../../block-credits,
+>>> split ,
+>>> map trim
+>>> map toRef
+
+## page-methodo
+_id: page-methodo
+_blocks: 
+../../block-methodo,
 >>> split ,
 >>> map trim
 >>> map toRef
@@ -1080,7 +1262,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-1-1
 _id: text-simulation-1-1
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-1-1
@@ -1089,7 +1271,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-1-2
 _id: text-simulation-1-2
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-1-2
@@ -1098,7 +1280,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-1-3
 _id: text-simulation-1-3
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-1-3
@@ -1107,7 +1289,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-1-4
 _id: text-simulation-1-4
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-1-4
@@ -1116,7 +1298,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-1-5
 _id: text-simulation-1-5
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-1-5
@@ -1125,16 +1307,34 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-1-6
 _id: text-simulation-1-6
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-1-6
 >>> toHtml
 
+## text-simulation-1-7
+_id: text-simulation-1-7
+_type: html
+_content: CHUNKS/block-simulation-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-7
+>>> toHtml
+
+## text-simulation-1-8
+_id: text-simulation-1-8
+_type: html
+_content: CHUNKS/block-simulation-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-1-8
+>>> toHtml
+
 ## text-simulation-2-1
 _id: text-simulation-2-1
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-2-1
@@ -1143,7 +1343,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-2-2
 _id: text-simulation-2-2
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-2-2
@@ -1152,7 +1352,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-2-3
 _id: text-simulation-2-3
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-2-3
@@ -1161,7 +1361,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-3-1
 _id: text-simulation-3-1
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-3-1
@@ -1170,7 +1370,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-3-2
 _id: text-simulation-3-2
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-3-2
@@ -1179,7 +1379,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-3-3
 _id: text-simulation-3-3
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-3-3
@@ -1188,7 +1388,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-3-4
 _id: text-simulation-3-4
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-3-4
@@ -1197,7 +1397,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-3-5
 _id: text-simulation-3-5
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-3-5
@@ -1206,10 +1406,37 @@ _content: CHUNKS/block-scrolling-text/content
 ## text-simulation-4-1
 _id: text-simulation-4-1
 _type: html
-_content: CHUNKS/block-scrolling-text/content
+_content: CHUNKS/block-simulation-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/simulation-4-1
+>>> toHtml
+
+## text-simulation-4-2
+_id: text-simulation-4-2
+_type: html
+_content: CHUNKS/block-simulation-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-4-2
+>>> toHtml
+
+## text-simulation-5-1
+_id: text-simulation-5-1
+_type: html
+_content: CHUNKS/block-simulation-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-5-1
+>>> toHtml
+
+## text-simulation-5-2
+_id: text-simulation-5-2
+_type: html
+_content: CHUNKS/block-simulation-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/simulation-5-2
 >>> toHtml
 
 ## part-1-text-1
@@ -1293,6 +1520,15 @@ _content: CHUNKS/block-scrolling-text/content
 >>> replaceWithRef {{TEXT}} texts/plan/text-6
 >>> toHtml
 
+## block-text-6-1
+_id: block-text-6-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-6-1
+>>> toHtml
+
 ## block-text-7
 _id: block-text-7
 _type: html
@@ -1319,6 +1555,34 @@ _content: CHUNKS/block-scrolling-text/content
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/text-9
 >>> toHtml
+
+## block-text-9-1
+_id: block-text-9-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-9-1
+>>> toHtml
+
+## block-text-9-2
+_id: block-text-9-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-9-2
+>>> toHtml
+
+## block-text-9-3
+_id: block-text-9-3
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-9-3
+>>> toHtml
+
 
 ## block-text-10
 _id: block-text-10
@@ -1356,6 +1620,24 @@ _content: CHUNKS/block-scrolling-text/content
 >>> replaceWithRef {{TEXT}} texts/plan/text-13
 >>> toHtml
 
+## block-text-13-1
+_id: block-text-13-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-13-1
+>>> toHtml
+
+## block-text-13-2
+_id: block-text-13-2
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-13-2
+>>> toHtml
+
 ## block-text-14
 _id: block-text-14
 _type: html
@@ -1363,6 +1645,15 @@ _content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/text-14
+>>> toHtml
+
+## block-text-14-1
+_id: block-text-14-1
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/plan/text-14-1
 >>> toHtml
 
 ## block-text-15
@@ -1517,6 +1808,20 @@ _content: CHUNKS/block-scrolling-text/content
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/end/credits
 >>> toHtml
+
+## block-methodo
+_id: block-methodo
+_type: html
+_content: CHUNKS/block-scrolling-text/content
+>>> toRef
+>>> toString
+>>> replaceWithRef {{TEXT}} texts/end/methodo
+>>> toHtml
+
+
+
+
+
 
 
 

@@ -4,21 +4,25 @@
 
   export let isMobile
   export let gender = undefined
-  export let nathalie = false
+  export let name = ''
   export let color = 'lightBlue'
   export let secondLayer = false
   export let secondColor = 'red'
   export let secondLayerOpacity = 0
 
-  const getFace = (nathalie, gender) => {
-    if (nathalie === true) return faces['women'][0]
+  const getFace = (name, gender) => {
+    if (name === 'couple') return faces['couple']
+    if (name === 'nathalie') return faces['women'][0]
+    if (name === 'michel') return faces['men'][0]
+    if (name === 'abel') return faces['men'][1]
     if (gender === 'woman') return getRandomFromArray(faces['women'])
     if (gender === 'man') return getRandomFromArray(faces['men'])
     return getRandomFromArray([...faces['women'], ...faces['men']])
   }
 
   $: device = isMobile === true ? 'mobile' : 'desktop'
-  $: selectedFace = getFace(nathalie, gender)
+  $: selectedFace = getFace(name, gender)
+  $: console.log(selectedFace)
 
   $: inlineStyle = [`--second-layer-opacity: ${secondLayerOpacity};`]
 
