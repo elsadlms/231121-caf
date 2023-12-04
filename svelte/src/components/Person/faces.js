@@ -1,18 +1,12 @@
 export const faces = {
   couple: {
     mobile: {
-      red: 'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/face-couple-red-1-mobile.png',
       lightBlue:
-        'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/face-couple-lightblue-1-mobile.png',
-      transparentBlue:
-        'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/face-couple-transparentblue-1-mobile.png',
+        'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/couple-lightblue-1-mobile.png',
     },
     desktop: {
-      red: 'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/face-couple-red-1-desktop.png',
       lightBlue:
-        'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/face-couple-lightblue-1-desktop.png',
-      transparentBlue:
-        'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/face-couple-transparentblue-1-desktop.png',
+        'https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/couple-lightblue-1-desktop.png',
     },
   },
   men: [

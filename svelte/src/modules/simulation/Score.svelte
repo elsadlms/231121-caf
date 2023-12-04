@@ -1,28 +1,13 @@
 <script>
-  import arrow from '~/assets/arrow.svg'
   import { texts } from '~/texts'
 
   export let value
-  // export let previousValue
   export let displayRange
+  export let displayLimit
   export let minValue
   export let maxValue
 
   const riskLimit = 0.5
-
-  const colorScale = [
-    { range: [0, 0.5], color: '#BE6D6D' },
-    { range: [0.5, 1], color: '#FF1B1B' },
-  ]
-
-  const getScoreColor = (value) => {
-    for (const section of colorScale) {
-      if (value >= section.range[0] && value < section.range[1]) {
-        return section.color
-      }
-    }
-    return '#000'
-  }
 
   let textData = texts.simulation
   if (typeof LM_PAGE !== 'undefined')
@@ -31,6 +16,7 @@
   $: containerClasses = [
     'score__container',
     displayRange ? 'score__container--range' : '',
+    displayLimit ? 'score__container--limit' : '',
   ]
 
   $: inlineStyle = [
@@ -41,7 +27,6 @@
     `--score-max: ${maxValue * 100}%;`,
     `--score-max-value: '${maxValue.toFixed(2)}';`,
     `--score-fill-left: #48FFFF;`,
-    // `--score-fill-right: ${getScoreColor(value)};`,
     `--score-fill-right: #FF1B1B;`,
   ]
 </script>
@@ -119,17 +104,6 @@
       background-color 600ms;
   }
 
-  .score__bar__limit {
-    border-right: 1px dashed #fff;
-    height: 33px;
-    position: absolute;
-    top: -10px;
-    left: var(--limit-offset);
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-  }
-
   .score__bar__range {
     width: var(--score-max);
     background-color: var(--caf-c-blue);
@@ -151,6 +125,7 @@
           content: var(--score-min-value);
           position: relative;
           top: -20px;
+          left: -2px;
         }
       }
 
@@ -161,8 +136,8 @@
           content: var(--score-max-value);
           padding-right: 0px;
           position: relative;
-          left: -100%;
           top: -20px;
+          left: -2px;
         }
       }
     }
@@ -181,6 +156,19 @@
 
     .score__bar__range {
       display: block;
+    }
+  }
+
+  .score__container--limit {
+    .score__bar__limit {
+      border-right: 1px dashed #fff;
+      height: 33px;
+      position: absolute;
+      top: -10px;
+      left: var(--limit-offset);
+      display: grid;
+      justify-content: center;
+      justify-items: center;
     }
   }
 </style>

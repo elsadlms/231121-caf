@@ -462,7 +462,7 @@ const part2 = [
 const part3 = [
   {
     id: 0,
-    part: 4,
+    part: 3,
     name: 'couple',
     params: {
       age: STATICS.ENTRE_35_ET_60_ANS,
@@ -502,7 +502,7 @@ const part3 = [
 const part4 = [
   {
     id: 0,
-    part: 3,
+    part: 4,
     name: 'Michel',
     params: {
       valide: STATICS.VALIDE,
@@ -541,7 +541,7 @@ const part4 = [
   },
   {
     id: 1,
-    part: 3,
+    part: 4,
     name: 'Abel',
     params: {
       valide: STATICS.VALIDE,
@@ -662,7 +662,6 @@ const part5 = [
   },
 ]
 
-// const config = [...part1, ...part2, ...part3, ...part4, ...part5]
-const config = [...part3]
+const config = [...part1, ...part2, ...part3, ...part4, ...part5]
 
 export { part1, part2, part3, part4, part5, config }

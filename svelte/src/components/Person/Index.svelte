@@ -22,7 +22,6 @@
 
   $: device = isMobile === true ? 'mobile' : 'desktop'
   $: selectedFace = getFace(name, gender)
-  $: console.log(selectedFace)
 
   $: inlineStyle = [`--second-layer-opacity: ${secondLayerOpacity};`]
 

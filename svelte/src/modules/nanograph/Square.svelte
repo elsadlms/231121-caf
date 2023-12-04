@@ -7,8 +7,6 @@
   export let gender
   export let index
 
-  // $: color = isHighlighted ? 'red' : 'lightBlue'
-
   $: inlineStyle = [`--width: ${width}px;`, `--delay: ${index * 100}ms;`]
   $: containerClasses = [
     'nanog-square',
@@ -30,14 +28,9 @@
   .nanog-square {
     height: var(--width);
     width: var(--width);
-    // background-color: plum;
     font-family: monospace;
     position: relative;
     border-radius: 3px;
-
-    &.nanog-square--highlighted {
-      // background-color: palevioletred;
-    }
   }
 
   :global(.nanog-square .person__img) {

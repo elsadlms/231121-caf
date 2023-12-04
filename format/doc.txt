@@ -143,28 +143,19 @@ body {
   width: var(--context-width-px);
 }
 
-.caf-capture__img-stack {
+.caf-capture {
   display: grid;
 }
 
-.caf-capture__img-stack > * {
+.caf-capture > * {
   grid-area: 1 / -1;
 }
 
 .caf-capture img {
   object-fit: contain;
-  max-height: calc(100vh - 200px);
+  max-height: 100vh;
   max-width: 100%;
-  padding: 0 100px;
-}
-
-.caf-capture__legend {
-  font-family: var(--lmui-ff-marr-sans, var(--ff-marr-sans));
-  padding: 0 100px;
-  padding-top: 0.66em;
-  font-size: 14px;
-  opacity: 0.6;
-  letter-spacing: 0.015em;
+  padding: 100px;
 }
 
 .lm-scrllgngn_page-page-text-10 .caf-capture__img-overlay {
@@ -179,30 +170,14 @@ body {
 }
 
 @media (max-width: 800px) {
-  .caf-capture img,
-  .caf-capture__legend {
-    padding: 0 40px;
-  }
-
-  .caf-capture__legend {
-    padding-top: 0.66em;
+  .caf-capture img {
+    padding: 40px;
   }
 }
 
 @media (max-width: 500px) {
-  .caf-capture img,
-  .caf-capture__legend {
-    padding: 0 24px;
-  }
-
-  .caf-capture__legend {
-    padding-top: 0.66em;
-  }
-}
-
-@media (max-width: 400px) {
-  .caf-capture__legend {
-    font-size: 12px;
+  .caf-capture img {
+    padding: 24px;
   }
 }
 
@@ -231,10 +206,6 @@ body {
 
 .lm-scrllgngn_page-page-text-11 .caf-list__element.caf-list__element--second-screen {
   opacity: 0;
-}
-
-.caf-conclusion {
-  padding-top: 50vh;
 }
 
 .caf-credits {
@@ -288,17 +259,10 @@ body {
     width: 50%;
     right: 5%;
   }
-
-  .caf-capture-container {
-    width: calc(var(--context-width-px) / 2);
-    right: 0;
-    position: absolute;
-  }
 }
 
 [data-id="intro-text-1"] .caf-scrolling-text {
    align-items: flex-start;
-   height: 50vh;
 }
 
 // SLOTS
@@ -1156,14 +1120,12 @@ _transitions: fade, 600
 _content: 
 <div class="caf-capture-container lm-flex-center">
   <div class="caf-capture">
-    <div class="caf-capture__img-stack">
-      <img class="caf-capture__img" src="https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/capture.jpg" alt="Capture du document Contrôles et datamining à la CAF">
-      <img class="caf-capture__img-overlay" src="https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/capture-overlay.jpg" alt="Capture du document Contrôles et datamining à la CAF">
-    </div>
-    <p class="caf-capture__legend">{{LEGEND}}</p>
+    <img class="caf-capture__img" src="https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/capture.jpg" alt="Capture du document Contrôles et datamining à la CAF">
+    <img class="caf-capture__img-overlay" src="https://assets-decodeurs.lemonde.fr/redacweb/231121-caf-assets/capture-overlay.jpg" alt="Capture du document Contrôles et datamining à la CAF">
+    <p>{{LEGEND}}</p>
   </div>
 </div>
->>> replaceWithRef {{LEGEND}} texts/capture/legend
+>>> replace {{HEIGHT}} 100vh
 >>> toHtml
 
 ## block-list
@@ -1649,7 +1611,7 @@ _content: CHUNKS/block-scrolling-text/content
 ## block-text-10
 _id: block-text-10
 _type: html
-_content: CHUNKS/block-simulation-text/content
+_content: CHUNKS/block-scrolling-text/content
 >>> toRef
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/plan/text-10
@@ -1879,4 +1841,15 @@ _content: CHUNKS/block-scrolling-text/content
 >>> toString
 >>> replaceWithRef {{TEXT}} texts/end/methodo
 >>> toHtml
+
+
+
+
+
+
+
+
+
+
+
 

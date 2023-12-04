@@ -6,10 +6,7 @@
   export let opacity
   export let risk
 
-  $: inlineStyle = [
-    `--width: ${width}px;`,
-    `--opacity: ${opacity};`,
-  ]
+  $: inlineStyle = [`--width: ${width}px;`, `--opacity: ${opacity};`]
 </script>
 
 <div class="square" style={inlineStyle.join('')}>
@@ -28,5 +25,6 @@
     width: var(--width);
     position: relative;
     opacity: var(--opacity);
+    transition: opacity 600ms;
   }
 </style>

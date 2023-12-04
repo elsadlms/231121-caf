@@ -56,6 +56,11 @@ export const generateSquaresArray = (grid) => {
     (_el, i) => i + firstStepCount + secondStepCount
   )
 
+  const availableOrders = Array.from(
+    { length: squaresNumber },
+    (_el, i) => i
+  )
+
   let index = 0
   for (let row = 0; row < rowsNumber; row++) {
     for (let col = 0; col < colsNumber; col++) {
@@ -79,12 +84,6 @@ export const generateSquaresArray = (grid) => {
         step = 3
       }
 
-      const availableOrders =
-        step === 1
-          ? availableFirstStepOrders
-          : step === 2
-          ? availableSecondStepOrders
-          : availableThirdStepOrders
       const order = getRandomFromArray(availableOrders)
       const orderIndex = availableOrders.findIndex((el) => el === order)
       availableOrders.splice(orderIndex, 1)

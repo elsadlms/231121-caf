@@ -31,7 +31,8 @@
 
   $: updateConfig(currentPage)
 
-  $: displayScoreRange = currentConfig.part === 4 ? true : false
+  $: displayScoreLimit = currentConfig.part === 3 ? true : false
+  $: displayScoreRange = currentConfig.part === 3 ? true : false
   $: conjointAge = currentConfig.part === 2 ? getAge(pageProgression) : null
 
   const updateConfig = (page) => {
@@ -70,7 +71,10 @@
     return currentConfig.baseAge + additionalAge
   }
 
-  const wrapperClasses = [`simulation__wrapper`]
+  $: wrapperClasses = [
+    `simulation__wrapper`,
+    `simulation__wrapper--${currentConfig.name.toLowerCase()}`,
+  ]
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -93,6 +97,7 @@
       <div class="simulation__profile__score">
         <Score
           value={currentScore.average}
+          displayLimit={displayScoreLimit}
           displayRange={displayScoreRange}
           minValue={currentScore.min}
           maxValue={currentScore.max}
@@ -148,6 +153,10 @@
     // align-items: center;
     justify-content: center;
     padding-top: 10vh;
+
+    @media (max-width: 400px) {
+      padding-top: 8vh;
+    }
   }
 
   .simulation__container {
@@ -176,7 +185,7 @@
   .simulation__profile__illus {
     width: 130px;
     filter: drop-shadow(0px 0px 54px #48ffff);
-    padding-bottom: 48px;
+    padding-bottom: 42px;
 
     @media (max-width: 500px) {
       width: 100px;
@@ -223,6 +232,17 @@
 
     @media (max-width: 400px) {
       font-size: 12px;
+    }
+  }
+
+  .simulation__wrapper--couple {
+    .simulation__profile__illus {
+      width: 260px;
+      padding-bottom: 48px;
+
+      @media (max-width: 500px) {
+        width: 200px;
+      }
     }
   }
 </style>

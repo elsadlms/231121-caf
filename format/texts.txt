@@ -4,12 +4,12 @@
 
 _text-1: 
 <p class="caf-text-card">
-Allocations familiales, aides au logement, RSA, allocation adulte handicapé… En France, près d'un foyer sur deux reçoit l'une de ces aides sociales.
+Allocations familiales, aides au logement, RSA, allocation adulte handicapé… En France, près d’un foyer sur deux reçoit l’une de ces aides sociales.
 </p>
 
 _text-2: 
 <p class="caf-text-card">
-Chaque bénéficiaire est susceptible d'être contrôlé à tout moment par sa Caisse d'allocations familiales (CAF) pour vérifier s'il n'a pas commis une erreur dans sa déclaration.
+Chaque bénéficiaire est susceptible d’être contrôlé à tout moment par sa Caisse d’allocations familiales (CAF) pour vérifier s’il n’a pas commis une erreur dans sa déclaration.
 </p>
 
 _text-3:
@@ -29,7 +29,7 @@ Pour cela, elle utilise depuis 2010 un algorithme de <em>data mining</em>, qui a
 
 _text-6:
 <p class="caf-text-card">
-Ce système est présenté comme neutre. Mais, sous couvert de corrélations statistiques, l'algorithme cible bien souvent les publics les plus fragiles.
+Ce système est présenté comme neutre. Mais, sous couvert de corrélations statistiques, l’algorithme cible bien souvent les publics les plus fragiles.
 </p>
 
 
@@ -37,7 +37,7 @@ Ce système est présenté comme neutre. Mais, sous couvert de corrélations sta
 
 _text-1:
 <p class="caf-plain-text">
-Le système de contrôle des CAF est une boîte noire. Selon l'organisme, la majorité des contrôles les plus poussés, qui se font au domicile des allocataires, sont déclenchés grâce à l'algorithme de <em>data mining</em>.
+Le système de contrôle des CAF est une boîte noire. Selon l’organisme, la majorité des contrôles les plus poussés, qui se font au domicile des allocataires, sont déclenchés grâce à l’algorithme de <em>data mining</em>.
 </p>
 
 _text-2:
@@ -52,12 +52,12 @@ Par exemple, les familles monoparentales sont surreprésentées dans les contrô
 
 _nanog-2:
 <p class="caf-text-card">
-Ces parents isolés subissaient 36&nbsp;% des contrôles à domicile…
+Ces parents isolés subissent 36&nbsp;% des contrôles à domicile…
 </p>
 
 _nanog-3:
 <p class="caf-text-card">
-… alors qu'ils ne représentaient que 16&nbsp;% des foyers recevant des aides.
+… alors qu’ils ne représentent que 16&nbsp;% des foyers recevant des aides.
 </p>
 
 _nanog-4:
@@ -67,7 +67,7 @@ De même, deux tiers de ces contrôles visent les foyers les plus précaires…
 
 _nanog-5:
 <p class="caf-text-card">
-… alors qu'ils sont minoritaires parmi les allocataires.
+… alors qu’ils sont minoritaires parmi les allocataires.
 </p>
 
 _text-3:
@@ -77,17 +77,17 @@ Peut-on en conclure que le score de risque de <em>data mining</em> des CAF est b
 
 _text-4:
 <p class="caf-plain-text">
-Pour le vérifier, nous avons sollicité la Caisse nationale des allocations familiales (CNAF), l'organisme qui coiffe toutes les CAF. Elle a accepté de communiquer une grande partie de son algorithme au <em>Monde</em> et à l'association La Quadrature du Net, qui avait formulé une demande similaire.
+Pour le vérifier, nous avons sollicité la Caisse nationale des allocations familiales (CNAF), l’organisme qui coiffe toutes les CAF. Elle a accepté de communiquer une grande partie de son algorithme au <em>Monde</em> et à l’association La Quadrature du Net, qui avait formulé une demande similaire.
 </p>
 
 _text-5:
 <p class="caf-plain-text">
-En analysant les trois mille lignes de code du fichier qu'elle nous a transmis, en collaboration avec le collectif de journalistes Lighthouse Reports, nous avons pu décortiquer son fonctionnement.
+En analysant les trois mille lignes de code du fichier qu’elle nous a transmis, en collaboration avec le collectif de journalistes Lighthouse Reports, nous avons pu décortiquer son fonctionnement.
 </p>
 
 _text-6:
 <p class="caf-plain-text">
-L'algorithme est relativement simple&nbsp;: il associe un coefficient de risque à une quarantaine de critères, comme l'âge ou le statut marital. Chaque foyer se voit ainsi attribuer un score de risque individuel compris entre 0 et 1.
+L’algorithme est relativement simple&nbsp;: il associe un coefficient de risque à une quarantaine de critères, comme l’âge ou le statut marital. Chaque foyer se voit ainsi attribuer un score de risque individuel compris entre 0 et 1.
 </p>
 
 _simulation-1-1:
@@ -107,12 +107,12 @@ Ils gagnent chacun 1&nbsp;500&nbsp;euros par mois.
 
 _simulation-1-4:
 <p class="caf-text-card">
-Ils ont deux enfants : l'un a 16 ans, l'autre 18 ans.
+Ils ont deux enfants&nbsp;: l’un a 16 ans, l’autre 18 ans.
 </p>
 
 _simulation-1-5:
 <p class="caf-text-card">
-Ils n'ont pas déménagé récemment.
+Ils n’ont pas déménagé récemment.
 </p>
 
 _simulation-1-6:
@@ -127,27 +127,27 @@ Chacun de ces critères influence favorablement ou défavorablement le score de 
 
 _simulation-1-8:
 <p class="caf-text-card">
-Plus son score se rapproche de 1, plus elle a de chances d'être contrôlée. En l'occurence, avec sa note moyenne de 0,24, il n'y a quasiment aucune chance que la CNAF déclenche un contrôle.
+Plus son score se rapproche de 1, plus elle a de chances d’être contrôlée. En l’occurence, avec sa note moyenne de 0,24, il n’y a quasiment aucune chance que la CNAF déclenche un contrôle.
 </p>
 
 _text-8:
 <p class="caf-plain-text">
-Contrairement à ce que prétend la CNAF, l'algorithme est trop grossier pour réfléter <em>«&nbsp;la complexification croissante des parcours de vie&nbsp;»</em> des bénéficiaires.
+Contrairement à ce que prétend la CNAF, l’algorithme est trop grossier pour réfléter <em>«&nbsp;la complexification croissante des parcours de vie&nbsp;»</em> des bénéficiaires.
 </p>
 
 _text-9:
 <p class="caf-plain-text">
-Dans ce type d'algorithme, nommé «&nbsp;régression logistique&nbsp;», les critères contribuent au score de façon binaire, sans être croisés entre eux.
+Dans ce type d’algorithme, nommé «&nbsp;régression logistique&nbsp;», les critères contribuent au score de façon binaire, sans être croisés entre eux.
 </p>
 
 _text-9-1:
 <p class="caf-plain-text">
-Ainsi, tous les foyers qui consacrent plus de 35&nbsp;% de leurs revenus à leur loyer sont jugés suspects – qu'ils soient riches ou pauvres.
+Ainsi, tous les foyers qui consacrent plus de 35&nbsp;% de leurs revenus à leur loyer sont jugés suspects – qu’ils soient riches ou pauvres.
 </p>
 
 _text-9-2:
 <p class="caf-plain-text">
-Le fonctionnement simpliste de l'algorithme favorise par ailleurs les effets de seuil.
+Le fonctionnement simpliste de l’algorithme favorise par ailleurs les effets de seuil.
 </p>
 
 _simulation-2-1:
@@ -157,42 +157,42 @@ Par exemple, le score du bénéficiaire est minoré ou majoré selon que son par
 
 _simulation-2-2:
 <p class="caf-text-card">
-Dans trois ans, lorsque son mari aura 60 ans, le score de Nathalie augmentera donc d'un seul coup.
+Dans trois ans, lorsque son mari aura 60 ans, le score de Nathalie augmentera donc d’un seul coup.
 </p>
 
 _text-9-3:
 <p class="caf-plain-text">
-La CNAF ne nous a pas expliqué pourquoi elle avait choisi cette méthode, alors que d'autres techniques permettent de lisser ces effets de seuil.
+La CNAF ne nous a pas expliqué pourquoi elle avait choisi cette méthode, alors que d’autres techniques permettent de lisser ces effets de seuil.
 </p>
 
 _text-10:
 <p class="caf-text-card">
-L'organisme public se défend de cibler les plus vulnérables. Pourtant, nous avons découvert qu'au moins sept des trente-six critères choisis pénalisent les foyers les plus précaires.
+L’organisme public se défend de cibler les plus vulnérables. Pourtant, nous avons découvert qu’au moins sept des trente-six critères choisis pénalisent les foyers les plus précaires.
 </p>
 
 _text-11:
 <p class="caf-text-card">
-Cinq critères majorent directement le score des bénéficiaires pauvres ou à l'activité professionnelle irrégulière.
+Cinq critères majorent directement le score des bénéficiaires pauvres ou à l’activité professionnelle irrégulière.
 </p>
 
 _text-12:
 <p class="caf-text-card">
-D'autres critères agissent de façon indirecte. Ainsi, le fait de multiplier les déclarations sur le même dossier est considéré comme suspect – alors que des déclarations régulières sont par ailleurs exigées pour toucher le RSA ou l'allocation adulte handicapé.
+D’autres critères agissent de façon indirecte. Ainsi, le fait de multiplier les déclarations sur le même dossier est considéré comme suspect – alors que des déclarations régulières sont par ailleurs exigées pour toucher le RSA ou l’allocation adulte handicapé.
 </p>
 
 _text-13:
 <p class="caf-plain-text">
-Ces critères de ressources, qui pèsent lourdement dans le score de risque, ne font pas que pénaliser les plus pauvres&nbsp;: ils permettent aussi aux plus aisés d'être quasiment à l'abri de tout contrôle.
+Ces critères de ressources, qui pèsent lourdement dans le score de risque, ne font pas que pénaliser les plus pauvres&nbsp;: ils permettent aussi aux plus aisés d’être quasiment à l’abri de tout contrôle.
 </p>
 
 _simulation-3-1:
 <p class="caf-text-card">
-Ainsi, un couple avec deux revenus stables n'a presque aucune chance d'être contrôlé, peu importe le reste de sa situation et son comportement.
+Ainsi, un couple avec deux revenus stables n’a presque aucune chance d’être contrôlé, peu importe le reste de sa situation et son comportement.
 </p>
 
 _text-13-1:
 <p class="caf-plain-text">
-L'algorithme cible aussi les personnes handicapées. Le fait de travailler tout en bénéficiant de l'allocation adulte handicapé (AAH) est en effet considéré comme suspect (sauf si c'est en établissement spécialisé).
+L’algorithme cible aussi les personnes handicapées. Le fait de travailler tout en bénéficiant de l’allocation adulte handicapé (AAH) est en effet considéré comme suspect (sauf si c’est en établissement spécialisé).
 </p>
 
 _simulation-4-1:
@@ -202,37 +202,37 @@ Prenons le cas de Michel, salarié à temps partiel dans le privé.
 
 _simulation-4-2:
 <p class="caf-text-card">
-Son ami Abel est exactement dans la même situation, à une exception près&nbsp;: il touche l'AAH. Il aura un score de risque bien supérieur.
+Son ami Abel est exactement dans la même situation, à une exception près&nbsp;: il touche l’AAH. Il aura un score de risque bien supérieur.
 </p>
 
 _text-13-2:
 <p class="caf-plain-text">
-On voit donc clairement que l'algorithme est biaisé. Mais est-il pour autant «&nbsp;discriminatoire&nbsp;» au sens de la loi ?
+On voit donc clairement que l’algorithme est biaisé. Mais est-il pour autant «&nbsp;discriminatoire&nbsp;» au sens de la loi ?
 </p>
 
 _text-14:
 <p class="caf-plain-text">
-Initialement, l'algorithme utilisait la nationalité de l'allocataire, en attribuant un score de risque plus élevé aux personnes d'origine extra-européenne. Or, la nationalité est un «&nbsp;critère protégé&nbsp;» aux yeux de la loi&nbsp;: il est interdit de l'utiliser pour justifier le traitement moins favorable d'une personne.
+Initialement, l’algorithme utilisait la nationalité de l’allocataire, en attribuant un score de risque plus élevé aux personnes d’origine extra-européenne. Or, la nationalité est un «&nbsp;critère protégé&nbsp;» aux yeux de la loi&nbsp;: il est interdit de l’utiliser pour justifier le traitement moins favorable d’une personne.
 </p>
 
 _text-14-1:
 <p class="caf-plain-text">
-Après une dénonciation par le Défenseur des droits, la CNAF a dû renoncer à ce critère illégal – il n'est plus utilisé aujourd'hui.
+Après une dénonciation par le Défenseur des droits, la CNAF a dû renoncer à ce critère illégal – il n’est plus utilisé aujourd’hui.
 </p>
 
 _text-15:
 <p class="caf-plain-text">
-D'autres critères protégés restent pourtant utilisés dans l'algorithme&nbsp;: l'âge, le handicap, la situation de famille (les personnes pacsées sont moins «&nbsp;à risque&nbsp;» que les personnes mariées ou concubines) ou encore le lieu de résidence.
+D’autres critères protégés restent pourtant utilisés dans l’algorithme&nbsp;: l’âge, le handicap, la situation de famille (les personnes pacsées sont moins «&nbsp;à risque&nbsp;» que les personnes mariées ou concubines) ou encore le lieu de résidence.
 </p>
 
 _text-16:
 <p class="caf-plain-text">
-L'algorithme contient d'autres critères qui pourraient entraîner des discriminations indirectes&nbsp;: bien que neutres en apparence, ils sont fortement corrélés à d'autres critères protégés.
+L’algorithme contient d’autres critères qui pourraient entraîner des discriminations indirectes&nbsp;: bien que neutres en apparence, ils sont fortement corrélés à d’autres critères protégés.
 </p>
 
 _simulation-5-1:
 <p class="caf-text-card">
-Par exemple, l'algorithme pénalise les foyers qui travaillent moins de quinze mois sur l'année. Or, une personne seule ne peut dépasser ce seuil. Les familles monoparentales sont donc indirectement lésées, alors même que la situation de famille est protégée par la loi.
+Par exemple, l’algorithme pénalise les foyers qui travaillent moins de quinze mois sur l’année. Or, une personne seule ne peut dépasser ce seuil. Les familles monoparentales sont donc indirectement lésées, alors même que la situation de famille est protégée par la loi.
 </p>
 
 _simulation-5-2:
@@ -243,28 +243,32 @@ Ce critère peut aussi être considéré comme une discrimination indirecte enve
 _text-17:
 <div class="caf-conclusion caf-plain-text">
 <p>
-Selon la loi, les discriminations peuvent être tolérées si elles <em>«&nbsp;sont justifiées par un but légitime et que les moyens de parvenir à ce but sont nécessaires et appropriés&nbsp;»</em>. La CNAF estime que son algorithme reste dans le cadre de la loi, mais reconnaît n'avoir mené aucune analyse pour identifier les risques de discrimination.
+Selon la loi, les discriminations peuvent être tolérées si elles <em>«&nbsp;sont justifiées par un but légitime et que les moyens de parvenir à ce but sont nécessaires et appropriés&nbsp;»</em>. La CNAF estime que son algorithme reste dans le cadre de la loi, mais reconnaît n’avoir mené aucune analyse pour identifier les risques de discrimination.
 </p>
 <p>
-Dans ce contexte, l'opacité de cet algorithme n'est pas neutre. <em>«&nbsp;Mettre ces outils dans une boîte noire est une manière de ne pas avoir de débat démocratique sur leur fabrication et leur contenu&nbsp;»</em>, regrette Raphaële Xenidis, professeure de droit européen à Sciences Po.
+Dans ce contexte, l’opacité de cet algorithme n’est pas neutre. <em>«&nbsp;Mettre ces outils dans une boîte noire est une manière de ne pas avoir de débat démocratique sur leur fabrication et leur contenu&nbsp;»</em>, regrette Raphaële Xenidis, professeure de droit européen à Sciences Po.
 </p>
 <p>
-L'exemple de la CNAF, pionnière dans le domaine du traitement algorithmique en France, montre que ces systèmes doivent pouvoir être contrôlés et débattus, au même titre que n'importe quelle autre politique publique.
+L’exemple de la CNAF, pionnière dans le domaine du traitement algorithmique en France, montre que ces systèmes doivent pouvoir être contrôlés et débattus, au même titre que n’importe quelle autre politique publique.
 </p>
 </div>
+
+## capture
+_legend:
+Extrait du vrai/faux de la CAF sur son algorithme
 
 ## end
 
 _credits:
 <div class="caf-credits">
 <p>
-<strong>Textes&nbsp;:</strong> Manon&nbsp;Romain et Adrien&nbsp;Sénécat
+<strong>Textes&nbsp;:</strong> Manon&nbsp;Romain et Adrien&nbsp;Sénécat, avec Lighthouse&nbsp;Reports. 
 </p>
 <p>
-<strong>Suivi éditorial&nbsp;:</strong> 
+<strong>Suivi éditorial&nbsp;:</strong> Maxime&nbsp;Vaudano et Jonathan&nbsp;Parienté 
 </p>
 <p>
-<strong>Edition&nbsp;:</strong> 
+<strong>Edition&nbsp;:</strong> Vincent&nbsp;Tarrière
 </p>
 <p>
 <strong>Design&nbsp;:</strong> Léa&nbsp;Girardot et Thomas&nbsp;Steffen
@@ -275,8 +279,8 @@ _credits:
 
 _methodo:
 <div class="caf-methodo">
-<p>​​La Caisse nationale d’allocations familiales (CNAF) a transmis au <em>Monde</em> les trois versions successives de son algorithme «&nbsp;data mining données entrantes&nbsp;» (DMDE). La plus récente, encore utilisée actuellement, a été transmise expurgée des noms des variables, qui ont été remplacés par <code>variable_1, variable_2</code>, etc. – ce qui rend son analyse impossible. La CNAF a justifié ce caviardage par le fait que la communication des variables <em>« porterait atteinte à la recherche et à la prévention, par les services compétents, d'infractions de toute nature »</em>. En revanche, les deux précédentes versions de l’algorithme, utilisées au niveau national entre 2010 et 2020, sont quasiment complètes – à l’exception de trois variables que la CNAF a occultées sans s'en expliquer.</p>
-<p>Dans les trois versions, l’algorithme de classification est une régression logistique. A chaque combinaison de critère et de valeur est associé un coefficient, ou poids. Ces poids s’ajoutent ensuite pour former un «&nbsp;score brut&nbsp;» (la «&nbsp;log-vraisemblance&nbsp;»). Un passage par la fonction sigmoid permet d'aboutir au score définitif, situé entre 0 et 1. Pour les exemples de cet article, nous avons reproduit fidèlement le fonctionnement de l'algorithme utilisé entre 2014 et 2020. Quand certains paramètres n'étaient pas déterminés, nous avons calculé la moyenne de la sigmoid entre les deux bornes possibles du score brut.</p>
+<p>​​La Caisse nationale d’allocations familiales (CNAF) a transmis au <em>Monde</em> les trois versions successives de son algorithme «&nbsp;data mining données entrantes&nbsp;» (DMDE). La plus récente, encore utilisée actuellement, a été transmise expurgée des noms des variables, qui ont été remplacés par <code>«&nbsp;variable_1&nbsp;»</code>, <code>«&nbsp;variable_2&nbsp;»</code>, etc. – ce qui rend son analyse impossible. La CNAF a justifié ce caviardage par le fait que la communication des variables <em>« porterait atteinte à la recherche et à la prévention, par les services compétents, d’infractions de toute nature »</em>. En revanche, les deux précédentes versions de l’algorithme, utilisées au niveau national entre 2010 et 2020, sont quasiment complètes – à l’exception de trois variables que la CNAF a occultées sans s’en expliquer.</p>
+<p>Dans les trois versions, l’algorithme de classification est une régression logistique. A chaque combinaison de critère et de valeur est associé un coefficient, ou poids. Ces poids s’ajoutent ensuite pour former un «&nbsp;score brut&nbsp;» (la «&nbsp;log-vraisemblance&nbsp;»). Un passage par la fonction sigmoid permet d’aboutir au score définitif, situé entre 0 et 1. Pour les exemples de cet article, nous avons reproduit fidèlement le fonctionnement de l’algorithme utilisé entre 2014 et 2020. Quand certains paramètres n’étaient pas déterminés, nous avons calculé la moyenne de la sigmoid entre les deux bornes possibles du score brut.</p>
 </div>
 
 ## module-intro
@@ -298,8 +302,8 @@ _situationPersoMarie: Marié
 _situationPersoDivorcee: Divorcée
 _conjointMoins60ans: Conjoint de moins de 60 ans
 _activiteSalariee: En activité salariée
-_moisActivite12: 12 mois d'activité sur la dernière année
-_moisActivite24: 24 mois d'activité sur la dernière année
+_moisActivite12: 12 mois d’activité sur la dernière année
+_moisActivite24: 24 mois d’activité sur la dernière année
 _revenus1484: Revenu ajusté de plus de 1484&nbsp;euros par personne
 _revenus942: Revenu ajusté de plus de 942&nbsp;euros par personne
 _revenus577: Revenu ajusté de plus de 577&nbsp;euros par personne
@@ -309,10 +313,10 @@ _enfantMoins18ans: Enfants de 12 à 18 ans
 _enfantMoins12ans: Enfants de moins de 12 ans
 _inscritePlus4ans: Inscrite à la CAF depuis plus de 4 ans
 _inscritPlus4ans: Inscrit à la CAF depuis plus de 4 ans
-_pasChangementAdresse: Pas de changement d'adresse
+_pasChangementAdresse: Pas de changement d’adresse
 _pasChangementLoyer: Pas de changement de loyer
 _mail4mois: Mail à la CAF il y a plus de 4 mois
-_toucheAAH: Touche l'AAH
+_toucheAAH: Touche l’AAH
 _jamaisControle: Jamais contrôlé auparavant
 
 

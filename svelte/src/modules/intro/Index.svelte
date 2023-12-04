@@ -91,25 +91,34 @@
   }
 
   $: getSquareOpacity = (square) => {
-    const { order } = square
-    const shiftedOrder = order - squaresAlreadyPresent
+    const { order, step } = square
 
-    const stepApparition = STEPS.find((el) => el.name === STEP_APPARITION)
+    if (currentPage === undefined) return 0
+    if (currentPage === null) return 0
 
-    if (
-      shiftedOrder <= getProgression(stepApparition).index &&
-      shiftedOrder > getProgression(stepApparition).index - animationSpan
-    ) {
-      return (
-        (getProgression(stepApparition).mapped - shiftedOrder) / animationSpan
-      )
-    } else if (
-      shiftedOrder <=
-      getProgression(stepApparition).index - animationSpan
-    ) {
-      return 1
+    if (currentPage > 5) {
+      if (step === 2 || step === 3) return 0
+      else return 1
     } else {
-      return 0
+      const shiftedOrder = order - squaresAlreadyPresent
+
+      const stepApparition = STEPS.find((el) => el.name === STEP_APPARITION)
+
+      if (
+        shiftedOrder <= getProgression(stepApparition).index &&
+        shiftedOrder > getProgression(stepApparition).index - animationSpan
+      ) {
+        return (
+          (getProgression(stepApparition).mapped - shiftedOrder) / animationSpan
+        )
+      } else if (
+        shiftedOrder <=
+        getProgression(stepApparition).index - animationSpan
+      ) {
+        return 1
+      } else {
+        return 0
+      }
     }
   }
 
@@ -146,10 +155,7 @@
   }
 
   $: getTextOpacity = () => {
-    if (currentPage === 0 && pageProgression < 0.6)
-      return { title: 1, publi: 1 }
-    if (currentPage === 0 && pageProgression < 0.8)
-      return { title: 1, publi: 0 }
+    if (currentPage > 5) return { title: 1, publi: 1 }
     return { title: 0, publi: 0 }
   }
 
@@ -176,6 +182,7 @@
         width={squareWidth}
         opacity={getSquareOpacity(square)}
         risk={getSquareRisk(square)}
+        step={square.step}
       />
     {/each}
   </div>
@@ -307,7 +314,7 @@
     }
   }
 
-  :global(.intro__grid > *),
+  .intro__grid,
   .intro__text-container {
     animation-name: fadeIn;
     animation-duration: 1600ms;
